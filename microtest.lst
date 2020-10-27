@@ -1,0 +1,76 @@
+Machine-level Assembler Version 6.3    Mon Oct 26 21:56:43 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+               !s4
+0  *0    8012  ldc msg1
+1  *1    FFF7  sout
+2  *2    0010  ld first
+3  *3    F900  bitswap
+4  *4    FFF9  hout
+5  *5    800A  ldc 10
+6  *6    FFFB  aout
+7  *7    8024  ldc msg2
+8  *8    FFF7  sout
+9  *9    0010  ld first
+A  *10   F300  push
+B  *11   0011  ld second
+C  *12   F800  or
+D  *13   FFF9  hout
+E  *14   F400  pop
+F  *15   FFFF  halt
+10 *16   36DF  first: dw 36DFh
+11 *17   1135  second: dw 1135h
+12 *18   0033  msg1: dw "36DF bitswapped: "
+13 *19   0036
+14 *20   0044
+15 *21   0046
+16 *22   0020
+17 *23   0062
+18 *24   0069
+19 *25   0074
+1A *26   0073
+1B *27   0077
+1C *28   0061
+1D *29   0070
+1E *30   0070
+1F *31   0065
+20 *32   0064
+21 *33   003A
+22 *34   0020
+23 *35   0000
+24 *36   0033  msg2: dw "36DF or 1135: "
+25 *37   0036
+26 *38   0044
+27 *39   0046
+28 *40   0020
+29 *41   006F
+2A *42   0072
+2B *43   0020
+2C *44   0031
+2D *45   0031
+2E *46   0033
+2F *47   0035
+30 *48   003A
+31 *49   0020
+32 *50   0000
+33 *51   ========= end of microtest.mas ==========================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ first                     10          2   9  
+ second                    11          B  
+ msg1                      12          0  
+ msg2                      24          7  
+
+Input file   = microtest.mas
+Output file  = microtest.mac
+List file    = microtest.lst 
+Config file  = s4.cfg 
+Number base  = decimal
+Label status = case sensitive

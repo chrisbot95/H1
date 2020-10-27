@@ -1,0 +1,81 @@
+Machine-level Assembler Version 6.3    Thu Sep 10 17:05:31 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    8019  ldc msg1;
+1  *1    FFF7  sout;
+2  *2    FFFC  din;
+3  *3    3017  sub one;
+4  *4    1018  st n;
+5  *5    0015  loop: ld b;
+6  *6    1016  st c;
+7  *7    2014  add a;
+8  *8    1015  st b;
+9  *9    0016  ld c;
+A  *10   1014  st a;
+B  *11   0018  ld n;
+C  *12   3017  sub one;
+D  *13   1018  st n;
+E  *14   D005  jnz loop;
+F  *15   802C  ldc msg2;
+10 *16   FFF7  sout;
+11 *17   0014  ld a;
+12 *18   FFFD  dout;
+13 *19   FFFF  halt;
+14 *20   0001  a: dw 1;
+15 *21   0001  b: dw 1;
+16 *22   0000  c: dw 0;
+17 *23   0001  one: dw 1;
+18 *24   0000  n: dw 0;
+19 *25   0069  msg1: dw "input n for Fib(n)";
+1A *26   006E
+1B *27   0070
+1C *28   0075
+1D *29   0074
+1E *30   0020
+1F *31   006E
+20 *32   0020
+21 *33   0066
+22 *34   006F
+23 *35   0072
+24 *36   0020
+25 *37   0046
+26 *38   0069
+27 *39   0062
+28 *40   0028
+29 *41   006E
+2A *42   0029
+2B *43   0000
+2C *44   0046  msg2: dw "Fib(n) = ";
+2D *45   0069
+2E *46   0062
+2F *47   0028
+30 *48   006E
+31 *49   0029
+32 *50   0020
+33 *51   003D
+34 *52   0020
+35 *53   0000
+36 *54   ========= end of fib.mas ================================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ loop                      5           E  
+ a                         14          7   A   11 
+ b                         15          5   8  
+ c                         16          6   9  
+ one                       17          3   C  
+ n                         18          4   B   D  
+ msg1                      19          0  
+ msg2                      2C          F  
+
+Input file   = fib.mas
+Output file  = fib.mac
+List file    = fib.lst 
+Number base  = decimal
+Label status = case sensitive

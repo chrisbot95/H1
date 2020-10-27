@@ -1,0 +1,22 @@
+ldc msg1
+sout
+din
+st num
+start: ld sum
+add num
+st sum
+ld count
+sub one
+st count
+jnz start
+ldc msg2
+sout
+ld sum
+dout
+halt
+count: dw 7
+num: dw 0
+sum: dw 0
+one: dw 1
+msg1: dw "please input an integer"
+msg2: dw "The sum is "

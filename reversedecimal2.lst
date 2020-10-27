@@ -1,0 +1,50 @@
+Machine-level Assembler Version 6.3    Wed Sep 16 20:13:23 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    FFFC  din
+1  *1    F300  push
+2  *2    FFFC  din
+3  *3    F300  push
+4  *4    FFFC  din
+5  *5    F300  push
+6  *6    FFFC  din
+7  *7    F300  push
+8  *8    FFFC  din
+9  *9    F300  push
+A  *10   FFFC  din
+B  *11   F300  push
+C  *12   FFFC  din
+D  *13   F300  push
+E  *14   FFFC  din
+F  *15   F300  push
+10 *16   FFFC  din
+11 *17   F300  push
+12 *18   FFFC  din
+13 *19   FFFD  dout
+14 *20   F400  pop
+15 *21   FFFD  dout
+16 *22   F400  pop
+17 *23   FFFD  dout
+18 *24   F400  pop
+19 *25   FFFD  dout
+1A *26   F400  pop
+1B *27   FFFD  dout
+1C *28   F400  pop
+1D *29   FFFD  dout
+1E *30   F400  pop
+1F *31   FFFD  dout
+20 *32   F400  pop
+21 *33   FFFD  dout
+22 *34   F400  pop
+23 *35   FFFD  dout
+24 *36   F400  pop
+25 *37   FFFD  dout
+26 *38   ========= end of reversedecimal2.mas ====================
+
+Input file   = reversedecimal2.mas
+Output file  = reversedecimal2.mac
+List file    = reversedecimal2.lst 
+Number base  = decimal
+Label status = case sensitive

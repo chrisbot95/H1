@@ -1,0 +1,82 @@
+Machine-level Assembler Version 6.3    Wed Sep 16 17:11:17 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    8014  ldc msg1
+1  *1    FFF7  sout
+2  *2    FFFC  din
+3  *3    1011  st num
+4  *4    0012  start: ld sum
+5  *5    2011  add num
+6  *6    1012  st sum
+7  *7    0010  ld count
+8  *8    3013  sub one
+9  *9    1010  st count
+A  *10   D004  jnz start
+B  *11   802C  ldc msg2
+C  *12   FFF7  sout
+D  *13   0012  ld sum
+E  *14   FFFD  dout
+F  *15   FFFF  halt
+10 *16   0007  count: dw 7
+11 *17   0000  num: dw 0
+12 *18   0000  sum: dw 0
+13 *19   0001  one: dw 1
+14 *20   0070  msg1: dw "please input an integer"
+15 *21   006C
+16 *22   0065
+17 *23   0061
+18 *24   0073
+19 *25   0065
+1A *26   0020
+1B *27   0069
+1C *28   006E
+1D *29   0070
+1E *30   0075
+1F *31   0074
+20 *32   0020
+21 *33   0061
+22 *34   006E
+23 *35   0020
+24 *36   0069
+25 *37   006E
+26 *38   0074
+27 *39   0065
+28 *40   0067
+29 *41   0065
+2A *42   0072
+2B *43   0000
+2C *44   0054  msg2: dw "The sum is "
+2D *45   0068
+2E *46   0065
+2F *47   0020
+30 *48   0073
+31 *49   0075
+32 *50   006D
+33 *51   0020
+34 *52   0069
+35 *53   0073
+36 *54   0020
+37 *55   0000
+38 *56   ========= end of timesseven.mas =========================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ start                     4           A  
+ count                     10          7   9  
+ num                       11          3   5  
+ sum                       12          4   6   D  
+ one                       13          8  
+ msg1                      14          0  
+ msg2                      2C          B  
+
+Input file   = timesseven.mas
+Output file  = timesseven.mac
+List file    = timesseven.lst 
+Number base  = decimal
+Label status = case sensitive

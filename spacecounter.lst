@@ -1,0 +1,75 @@
+Machine-level Assembler Version 6.3    Fri Oct 02 11:30:29 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    8014  ldc msg1
+1  *1    FFF7  sout
+2  *2    802E  ldc String1
+3  *3    FFF6  sin
+4  *4    802E  start: ldc String1
+5  *5    202B  add new
+6  *6    F100  ldi
+7  *7    C011  jz done
+8  *8    302A  sub space
+9  *9    D00D  jnz skip
+A  *10   002D  ld ecount
+B  *11   202C  add one
+C  *12   102D  st ecount
+D  *13   002B  skip: ld new
+E  *14   202C  add one
+F  *15   102B  st new
+10 *16   9004  ja start
+11 *17   002D  done: ld ecount
+12 *18   FFFD  dout
+13 *19   FFFF  halt
+14 *20   0070  msg1: dw "please input a string"
+15 *21   006C
+16 *22   0065
+17 *23   0061
+18 *24   0073
+19 *25   0065
+1A *26   0020
+1B *27   0069
+1C *28   006E
+1D *29   0070
+1E *30   0075
+1F *31   0074
+20 *32   0020
+21 *33   0061
+22 *34   0020
+23 *35   0073
+24 *36   0074
+25 *37   0072
+26 *38   0069
+27 *39   006E
+28 *40   0067
+29 *41   0000
+2A *42   0020  space: dw 32
+2B *43   0000  new: dw 0
+2C *44   0001  one: dw 1
+2D *45   0000  ecount: dw 0
+2E *46   0000  String1: dw 81 dup 0
+7F *127  ========= end of spacecounter.mas =======================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ start                     4           10 
+ skip                      D           9  
+ done                      11          7  
+ msg1                      14          0  
+ space                     2A          8  
+ new                       2B          5   D   F  
+ one                       2C          B   E  
+ ecount                    2D          A   C   11 
+ String1                   2E          2   4  
+
+Input file   = spacecounter.mas
+Output file  = spacecounter.mac
+List file    = spacecounter.lst 
+Number base  = decimal
+Label status = case sensitive

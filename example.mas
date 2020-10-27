@@ -1,0 +1,5 @@
+ld a
+add b
+halt
+a: dw 20
+b: dw -15

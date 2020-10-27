@@ -1,0 +1,32 @@
+din
+st one
+din
+st two
+din
+st three
+din
+st four
+din
+st five
+din
+st six
+din
+st seven
+din
+st eight
+din
+st nine
+din
+st ten
+loop:
+halt
+one: dw 0
+two: dw 0
+three: dw 0
+four: dw 0
+five: dw 0
+six: dw 0
+seven: dw 0
+eight: dw 0
+nine: dw 0
+ten: dw 0

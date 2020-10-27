@@ -1,0 +1,5 @@
+din
+mult seven
+dout
+halt
+seven: dw 7

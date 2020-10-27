@@ -1,0 +1,26 @@
+ldc msg1
+sout
+ldc String1
+sin
+loop: ldc String1
+add new
+ldi
+jz done
+sub space
+jnz skip
+ld ecount
+add one
+st ecount
+skip: ld new
+add one
+st new
+ja loop
+done: ld ecount
+dout
+halt
+msg1: dw "please input a string"
+space: dw 32
+new: dw 0
+one: dw 1
+ecount: dw 0
+String1: dw 81 dup 0

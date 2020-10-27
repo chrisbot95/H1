@@ -1,0 +1,27 @@
+ldc msg1
+sout
+din
+st a
+din
+st b
+add a
+st sum
+ldc msg2
+sout
+ld sum
+dout
+ld a
+sub b
+st dif
+ldc msg3
+sout
+ld dif
+dout
+halt
+msg1: dw "Input two decimal numbers"
+msg2: dw "The addition of the two inputs is "
+msg3: dw "The subtraction of the two inputs is "
+a: dw 0
+b: dw 0
+sum: dw 0
+dif: dw 0

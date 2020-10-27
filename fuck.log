@@ -1,0 +1,10 @@
+sim Version 6.3 Log File fuck.log
+
+Your name          = Run mod sim /r to put your name here
+Machinecode file   = fuck.mac     Size =   5 (hex) =    5 (dec)
+Microcode file     = none         Size =  93 (hex) =  147 (dec)
+======================== Log turned on  Thu Sep 10 15:33:36 2020
+---- [T7] 0: ld   /0 014/ ld
+---- [T7] 0: ld   /0 014/ ld20
+---- [T7] 0: ld   /0 014/ q
+================== sim(0965) terminated Thu Sep 10 15:33:54 2020

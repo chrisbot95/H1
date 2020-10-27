@@ -1,0 +1,6 @@
+sin
+st string
+ld 
+halt
+string: dw ""
+stop: 

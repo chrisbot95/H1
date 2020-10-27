@@ -1,0 +1,10 @@
+Machine-level Assembler Version 6.3    Wed Sep 16 19:14:20 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    FFFC  din
+
+ERROR on line 2 (decimal) of timesseven2.mas:
+mult seven
+Invalid operation

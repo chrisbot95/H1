@@ -1,0 +1,27 @@
+Machine-level Assembler Version 6.3    Thu Sep 10 16:36:26 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    0003  ld a
+1  *1    2004  add b
+2  *2    FFFF  halt
+3  *3    0014  a: dw 20
+4  *4    FFF1  b: dw -15
+5  *5    FFF7  sout
+6  *6    ========= end of example.mas ============================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ a                         3           0  
+ b                         4           1  
+
+Input file   = example.mas
+Output file  = example.mac
+List file    = example.lst 
+Number base  = decimal
+Label status = case sensitive
