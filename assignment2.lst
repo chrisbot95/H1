@@ -1,0 +1,26 @@
+Machine-level Assembler Version 6.3    Sun Sep 20 16:09:38 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    0005  ld poop
+1  *1    FFFD  dout
+2  *2    8005  ldc poop
+3  *3    FFFD  dout
+4  *4    FFFF  halt
+5  *5    000C  poop: dw 12
+6  *6    ========= end of assignment2.mas ========================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ poop                      5           0   2  
+
+Input file   = assignment2.mas
+Output file  = assignment2.mac
+List file    = assignment2.lst 
+Number base  = decimal
+Label status = case sensitive

@@ -1,0 +1,174 @@
+Machine-level Assembler Version 6.3    Wed Oct 07 19:34:58 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    8012  loop: ldc msg1      ;load message that asks for user input
+1  *1    FFF7  sout                ;display message asking user to input string
+2  *2    8078  ldc string          ;load the address of the first letter in the
+3  *3    205C  add new             ;skip ahead to an empty address to allow spa
+4  *4    FFF6  sin                 ;user enters the string
+5  *5    005C  loop1:ld new
+6  *6    205D  add one
+7  *7    105C  st new 
+8  *8    8078  ldc string   
+9  *9    205C  add new             
+A  *10   F100  ldi                 ;load what is in that address
+B  *11   D005  jnz loop1           ;if 
+C  *12   802F  ldc msg2
+D  *13   FFF7  sout
+E  *14   FFFA  ain
+F  *15   305B  sub diff
+10 *16   A000  jzop loop
+11 *17   FFFF  halt 
+12 *18   0065  msg1: dw "enter a string of characters"
+13 *19   006E
+14 *20   0074
+15 *21   0065
+16 *22   0072
+17 *23   0020
+18 *24   0061
+19 *25   0020
+1A *26   0073
+1B *27   0074
+1C *28   0072
+1D *29   0069
+1E *30   006E
+1F *31   0067
+20 *32   0020
+21 *33   006F
+22 *34   0066
+23 *35   0020
+24 *36   0063
+25 *37   0068
+26 *38   0061
+27 *39   0072
+28 *40   0061
+29 *41   0063
+2A *42   0074
+2B *43   0065
+2C *44   0072
+2D *45   0073
+2E *46   0000
+2F *47   0077  msg2: dw "would you like to enter another string y/n?"
+30 *48   006F
+31 *49   0075
+32 *50   006C
+33 *51   0064
+34 *52   0020
+35 *53   0079
+36 *54   006F
+37 *55   0075
+38 *56   0020
+39 *57   006C
+3A *58   0069
+3B *59   006B
+3C *60   0065
+3D *61   0020
+3E *62   0074
+3F *63   006F
+40 *64   0020
+41 *65   0065
+42 *66   006E
+43 *67   0074
+44 *68   0065
+45 *69   0072
+46 *70   0020
+47 *71   0061
+48 *72   006E
+49 *73   006F
+4A *74   0074
+4B *75   0068
+4C *76   0065
+4D *77   0072
+4E *78   0020
+4F *79   0073
+50 *80   0074
+51 *81   0072
+52 *82   0069
+53 *83   006E
+54 *84   0067
+55 *85   0020
+56 *86   0079
+57 *87   002F
+58 *88   006E
+59 *89   003F
+5A *90   0000
+5B *91   0078  diff: dw 120
+5C *92   0000  new: dw 0 
+5D *93   0001  one: dw 1
+5E *94   0000  a: dw 0
+5F *95   0000  b: dw 0
+60 *96   0000  c: dw 0
+61 *97   0000  d: dw 0
+62 *98   0000  e: dw 0
+63 *99   0000  f: dw 0
+64 *100  0000  g: dw 0
+65 *101  0000  h: dw 0
+66 *102  0000  i: dw 0
+67 *103  0000  j: dw 0
+68 *104  0000  k: dw 0
+69 *105  0000  l: dw 0
+6A *106  0000  m: dw 0
+6B *107  0000  n: dw 0
+6C *108  0000  o: dw 0
+6D *109  0000  p: dw 0
+6E *110  0000  q: dw 0
+6F *111  0000  r: dw 0
+70 *112  0000  s: dw 0
+71 *113  0000  t: dw 0
+72 *114  0000  u: dw 0
+73 *115  0000  v: dw 0
+74 *116  0000  w: dw 0
+75 *117  0000  x: dw 0
+76 *118  0000  y: dw 0
+77 *119  0000  z: dw 0
+78 *120  000D  string: dw 13
+79 *121  ========= end of assignment.mas =========================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ loop                      0           10 
+ loop1                     5           B  
+ msg1                      12          0  
+ msg2                      2F          C  
+ diff                      5B          F  
+ new                       5C          3   5   7   9  
+ one                       5D          6  
+ a                         5E         
+ b                         5F         
+ c                         60         
+ d                         61         
+ e                         62         
+ f                         63         
+ g                         64         
+ h                         65         
+ i                         66         
+ j                         67         
+ k                         68         
+ l                         69         
+ m                         6A         
+ n                         6B         
+ o                         6C         
+ p                         6D         
+ q                         6E         
+ r                         6F         
+ s                         70         
+ t                         71         
+ u                         72         
+ v                         73         
+ w                         74         
+ x                         75         
+ y                         76         
+ z                         77         
+ string                    78          2   8  
+
+Input file   = assignment.mas
+Output file  = assignment.mac
+List file    = assignment.lst 
+Number base  = decimal
+Label status = case sensitive

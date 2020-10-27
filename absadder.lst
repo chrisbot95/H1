@@ -1,0 +1,157 @@
+Machine-level Assembler Version 6.3    Fri Oct 02 19:20:31 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    801D  ldc msg1
+1  *1    FFF7  sout
+2  *2    FFFC  din
+3  *3    107D  st n
+4  *4    8036  loop: ldc msg2
+5  *5    FFF7  sout
+6  *6    FFFC  din
+7  *7    F300  push 
+8  *8    E011  call abs
+9  *9    F400  pop 
+A  *10   207C  add sum
+B  *11   107C  st sum
+C  *12   007D  ld n
+D  *13   307B  sub one
+E  *14   107D  st n
+F  *15   D004  jnz loop
+10 *16   9018  ja done
+11 *17   4001  abs: ldr 1
+12 *18   A017  jzop skip
+13 *19   107E  st x
+14 *20   307E  sub x
+15 *21   307E  sub x
+16 *22   5001  str 1
+17 *23   F000  skip: ret
+18 *24   8047  done: ldc msg3
+19 *25   FFF7  sout
+1A *26   007C  ld sum
+1B *27   FFFD  dout
+1C *28   FFFF  halt
+1D *29   0048  msg1: dw "How many input integers?"
+1E *30   006F
+1F *31   0077
+20 *32   0020
+21 *33   006D
+22 *34   0061
+23 *35   006E
+24 *36   0079
+25 *37   0020
+26 *38   0069
+27 *39   006E
+28 *40   0070
+29 *41   0075
+2A *42   0074
+2B *43   0020
+2C *44   0069
+2D *45   006E
+2E *46   0074
+2F *47   0065
+30 *48   0067
+31 *49   0065
+32 *50   0072
+33 *51   0073
+34 *52   003F
+35 *53   0000
+36 *54   0045  msg2: dw "Enter an Integer"
+37 *55   006E
+38 *56   0074
+39 *57   0065
+3A *58   0072
+3B *59   0020
+3C *60   0061
+3D *61   006E
+3E *62   0020
+3F *63   0049
+40 *64   006E
+41 *65   0074
+42 *66   0065
+43 *67   0067
+44 *68   0065
+45 *69   0072
+46 *70   0000
+47 *71   0054  msg3: dw "The sum of the absolute values of the input values:"
+48 *72   0068
+49 *73   0065
+4A *74   0020
+4B *75   0073
+4C *76   0075
+4D *77   006D
+4E *78   0020
+4F *79   006F
+50 *80   0066
+51 *81   0020
+52 *82   0074
+53 *83   0068
+54 *84   0065
+55 *85   0020
+56 *86   0061
+57 *87   0062
+58 *88   0073
+59 *89   006F
+5A *90   006C
+5B *91   0075
+5C *92   0074
+5D *93   0065
+5E *94   0020
+5F *95   0076
+60 *96   0061
+61 *97   006C
+62 *98   0075
+63 *99   0065
+64 *100  0073
+65 *101  0020
+66 *102  006F
+67 *103  0066
+68 *104  0020
+69 *105  0074
+6A *106  0068
+6B *107  0065
+6C *108  0020
+6D *109  0069
+6E *110  006E
+6F *111  0070
+70 *112  0075
+71 *113  0074
+72 *114  0020
+73 *115  0076
+74 *116  0061
+75 *117  006C
+76 *118  0075
+77 *119  0065
+78 *120  0073
+79 *121  003A
+7A *122  0000
+7B *123  0001  one: dw 1
+7C *124  0000  sum: dw 0
+7D *125  0000  n: dw 0
+7E *126  0000  x: dw 0
+7F *127  ========= end of absadder.mas ===========================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ loop                      4           F  
+ abs                       11          8  
+ skip                      17          12 
+ done                      18          10 
+ msg1                      1D          0  
+ msg2                      36          4  
+ msg3                      47          18 
+ one                       7B          D  
+ sum                       7C          A   B   1A 
+ n                         7D          3   C   E  
+ x                         7E          13  14  15 
+
+Input file   = absadder.mas
+Output file  = absadder.mac
+List file    = absadder.lst 
+Number base  = decimal
+Label status = case sensitive

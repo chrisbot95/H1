@@ -1,0 +1,40 @@
+Machine-level Assembler Version 6.3    Wed Sep 16 21:00:46 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    FFFC  din
+1  *1    100E  st num
+2  *2    000D  loop: ld sum
+3  *3    200E  add num
+4  *4    100D  st sum
+5  *5    000F  ld count
+6  *6    300C  sub one
+7  *7    100F  st count
+8  *8    D002  jnz loop
+9  *9    000D  ld sum
+A  *10   FFFD  dout
+B  *11   FFFF  halt
+C  *12   0001  one: dw 1
+D  *13   0004  sum: dw 4
+E  *14   0000  num: dw 0
+F  *15   000A  count: dw 10
+10 *16   ========= end of addtofour.mas ==========================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ loop                      2           8  
+ one                       C           6  
+ sum                       D           2   4   9  
+ num                       E           1   3  
+ count                     F           5   7  
+
+Input file   = addtofour.mas
+Output file  = addtofour.mac
+List file    = addtofour.lst 
+Number base  = decimal
+Label status = case sensitive

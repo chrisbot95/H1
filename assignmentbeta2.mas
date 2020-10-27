@@ -1,0 +1,26 @@
+ldc count
+add x
+ldi
+add one
+push
+ldc count
+add x
+sti
+loop: ldc count
+add new
+ldi
+dout
+ld new
+add one
+st new
+ld counter
+sub one
+st counter
+jnz loop
+ldi
+halt
+new: dw 0
+x: dw 15
+one: dw 1
+count: dw 26 dup 0
+counter: dw 26

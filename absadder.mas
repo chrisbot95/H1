@@ -1,0 +1,36 @@
+ldc msg1
+sout
+din
+st n
+loop: ldc msg2
+sout
+din
+push 
+call abs
+pop 
+add sum
+st sum
+ld n
+sub one
+st n
+jnz loop
+ja done
+abs: ldr 1
+jzop skip
+st x
+sub x
+sub x
+str 1
+skip: ret
+done: ldc msg3
+sout
+ld sum
+dout
+halt
+msg1: dw "How many input integers?"
+msg2: dw "Enter an Integer"
+msg3: dw "The sum of the absolute values of the input values:"
+one: dw 1
+sum: dw 0
+n: dw 0
+x: dw 0

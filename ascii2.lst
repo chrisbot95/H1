@@ -1,0 +1,134 @@
+Machine-level Assembler Version 6.3    Wed Sep 16 17:36:38 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    8041  ldc 65
+1  *1    FFFB  aout
+2  *2    FFFD  dout
+3  *3    FFF9  hout
+4  *4    2069  add one
+5  *5    FFFB  aout
+6  *6    FFFD  dout
+7  *7    FFF9  hout
+8  *8    2069  add one
+9  *9    FFFB  aout
+A  *10   FFFD  dout
+B  *11   FFF9  hout
+C  *12   2069  add one
+D  *13   FFFB  aout
+E  *14   FFFD  dout
+F  *15   FFF9  hout
+10 *16   2069  add one
+11 *17   FFFB  aout
+12 *18   FFFD  dout
+13 *19   FFF9  hout
+14 *20   2069  add one
+15 *21   FFFB  aout
+16 *22   FFFD  dout
+17 *23   FFF9  hout
+18 *24   2069  add one
+19 *25   FFFB  aout
+1A *26   FFFD  dout
+1B *27   FFF9  hout
+1C *28   2069  add one
+1D *29   FFFB  aout
+1E *30   FFFD  dout
+1F *31   FFF9  hout
+20 *32   2069  add one
+21 *33   FFFB  aout
+22 *34   FFFD  dout
+23 *35   FFF9  hout
+24 *36   2069  add one
+25 *37   FFFB  aout
+26 *38   FFFD  dout
+27 *39   FFF9  hout
+28 *40   2069  add one
+29 *41   FFFB  aout
+2A *42   FFFD  dout
+2B *43   FFF9  hout
+2C *44   2069  add one
+2D *45   FFFB  aout
+2E *46   FFFD  dout
+2F *47   FFF9  hout
+30 *48   2069  add one
+31 *49   FFFB  aout
+32 *50   FFFD  dout
+33 *51   FFF9  hout
+34 *52   2069  add one
+35 *53   FFFB  aout
+36 *54   FFFD  dout
+37 *55   FFF9  hout
+38 *56   2069  add one
+39 *57   FFFB  aout
+3A *58   FFFD  dout
+3B *59   FFF9  hout
+3C *60   2069  add one
+3D *61   FFFB  aout
+3E *62   FFFD  dout
+3F *63   FFF9  hout
+40 *64   2069  add one
+41 *65   FFFB  aout
+42 *66   FFFD  dout
+43 *67   FFF9  hout
+44 *68   2069  add one
+45 *69   FFFB  aout
+46 *70   FFFD  dout
+47 *71   FFF9  hout
+48 *72   2069  add one
+49 *73   FFFB  aout
+4A *74   FFFD  dout
+4B *75   FFF9  hout
+4C *76   2069  add one
+4D *77   FFFB  aout
+4E *78   FFFD  dout
+4F *79   FFF9  hout
+50 *80   2069  add one
+51 *81   FFFB  aout
+52 *82   FFFD  dout
+53 *83   FFF9  hout
+54 *84   2069  add one
+55 *85   FFFB  aout
+56 *86   FFFD  dout
+57 *87   FFF9  hout
+58 *88   2069  add one
+59 *89   FFFB  aout
+5A *90   FFFD  dout
+5B *91   FFF9  hout
+5C *92   2069  add one
+5D *93   FFFB  aout
+5E *94   FFFD  dout
+5F *95   FFF9  hout
+60 *96   2069  add one
+61 *97   FFFB  aout
+62 *98   FFFD  dout
+63 *99   FFF9  hout
+64 *100  2069  add one
+65 *101  FFFB  aout
+66 *102  FFFD  dout
+67 *103  FFF9  hout
+68 *104  FFFF  halt
+69 *105  0001  one: dw 1
+6A *106  001A  count: dw 26
+6B *107  0000  char: dw 0
+6C *108  ========= end of ascii2.mas =============================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ one                       69          4   8   C   10  14 
+                                       18  1C  20  24  28 
+                                       2C  30  34  38  3C 
+                                       40  44  48  4C  50 
+                                       54  58  5C  60  64 
+ count                     6A         
+ char                      6B         
+
+Input file   = ascii2.mas
+Output file  = ascii2.mac
+List file    = ascii2.lst 
+Number base  = decimal
+Label status = case sensitive

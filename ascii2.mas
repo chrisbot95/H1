@@ -1,0 +1,108 @@
+ldc 65
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+add one
+aout
+dout
+hout
+halt
+one: dw 1
+count: dw 26
+char: dw 0

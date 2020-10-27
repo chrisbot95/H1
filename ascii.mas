@@ -1,0 +1,16 @@
+ldc 65
+st char
+loop: ld char
+aout
+dout
+hout
+add one
+st char
+ld count
+sub one
+st count
+jnz loop
+halt
+one: dw 1
+count: dw 26
+char: dw 0

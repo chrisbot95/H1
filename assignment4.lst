@@ -1,0 +1,531 @@
+Machine-level Assembler Version 6.3    Thu Sep 24 16:54:37 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    8142  start: ldc msg1
+1  *1    2127  add new
+2  *2    F100  ldi
+3  *3    C0EE  jz done
+4  *4    3125  sub dif
+5  *5    C038  jz addA
+6  *6    3126  sub one
+7  *7    C03F  jz addB
+8  *8    3126  sub one
+9  *9    C046  jz addC
+A  *10   3126  sub one
+B  *11   C04D  jz addD
+C  *12   3126  sub one
+D  *13   C054  jz addE
+E  *14   3126  sub one
+F  *15   C05B  jz addF
+10 *16   3126  sub one
+11 *17   C062  jz addG
+12 *18   3126  sub one
+13 *19   C069  jz addH
+14 *20   3126  sub one
+15 *21   C070  jz addI
+16 *22   3126  sub one
+17 *23   C077  jz addJ
+18 *24   3126  sub one
+19 *25   C07E  jz addK
+1A *26   3126  sub one
+1B *27   C085  jz addL
+1C *28   3126  sub one
+1D *29   C08C  jz addM
+1E *30   3126  sub one
+1F *31   C093  jz addN
+20 *32   3126  sub one
+21 *33   C09A  jz addO
+22 *34   3126  sub one
+23 *35   C0A1  jz addP
+24 *36   3126  sub one
+25 *37   C0A8  jz addQ
+26 *38   3126  sub one
+27 *39   C0AF  jz addR
+28 *40   3126  sub one
+29 *41   C0B6  jz addS
+2A *42   3126  sub one
+2B *43   C0BD  jz addT
+2C *44   3126  sub one
+2D *45   C0C4  jz addU
+2E *46   3126  sub one
+2F *47   C0CB  jz addV
+30 *48   3126  sub one
+31 *49   C0D2  jz addW
+32 *50   3126  sub one
+33 *51   C0D9  jz addX
+34 *52   3126  sub one
+35 *53   C0E0  jz addY
+36 *54   3126  sub one
+37 *55   C0E7  jz addZ
+               
+38 *56   0128  addA: ld a
+39 *57   2126  add one
+3A *58   1128  st a
+3B *59   0127  ld new
+3C *60   2126  add one
+3D *61   1127  st new
+3E *62   9000  ja start
+               
+3F *63   0129  addB: ld b
+40 *64   2126  add one
+41 *65   1129  st b
+42 *66   0127  ld new
+43 *67   2126  add one
+44 *68   1127  st new
+45 *69   9000  ja start
+               
+46 *70   012A  addC: ld c
+47 *71   2126  add one
+48 *72   112A  st c
+49 *73   0127  ld new
+4A *74   2126  add one
+4B *75   1127  st new
+4C *76   9000  ja start
+               
+4D *77   012B  addD: ld d
+4E *78   2126  add one
+4F *79   112B  st d
+50 *80   0127  ld new
+51 *81   2126  add one
+52 *82   1127  st new
+53 *83   9000  ja start
+               
+54 *84   012C  addE: ld e
+55 *85   2126  add one
+56 *86   112C  st e
+57 *87   0127  ld new
+58 *88   2126  add one
+59 *89   1127  st new
+5A *90   9000  ja start
+               
+5B *91   012D  addF: ld f
+5C *92   2126  add one
+5D *93   112D  st f
+5E *94   0127  ld new
+5F *95   2126  add one
+60 *96   1127  st new
+61 *97   9000  ja start
+               
+62 *98   012E  addG: ld g
+63 *99   2126  add one
+64 *100  112E  st g
+65 *101  0127  ld new
+66 *102  2126  add one
+67 *103  1127  st new
+68 *104  9000  ja start
+               
+69 *105  012F  addH: ld h
+6A *106  2126  add one
+6B *107  112F  st h
+6C *108  0127  ld new
+6D *109  2126  add one
+6E *110  1127  st new
+6F *111  9000  ja start
+               
+70 *112  0130  addI: ld i
+71 *113  2126  add one
+72 *114  1130  st i
+73 *115  0127  ld new
+74 *116  2126  add one
+75 *117  1127  st new
+76 *118  9000  ja start
+               
+77 *119  0131  addJ: ld j
+78 *120  2126  add one
+79 *121  1131  st j
+7A *122  0127  ld new
+7B *123  2126  add one
+7C *124  1127  st new
+7D *125  9000  ja start
+               
+7E *126  0132  addK: ld k
+7F *127  2126  add one
+80 *128  1132  st k
+81 *129  0127  ld new
+82 *130  2126  add one
+83 *131  1127  st new
+84 *132  9000  ja start
+               
+85 *133  0133  addL: ld l
+86 *134  2126  add one
+87 *135  1133  st l
+88 *136  0127  ld new
+89 *137  2126  add one
+8A *138  1127  st new
+8B *139  9000  ja start
+               
+8C *140  0134  addM: ld m
+8D *141  2126  add one
+8E *142  1134  st m
+8F *143  0127  ld new
+90 *144  2126  add one
+91 *145  1127  st new
+92 *146  9000  ja start
+               
+93 *147  0135  addN: ld n
+94 *148  2126  add one
+95 *149  1135  st n
+96 *150  0127  ld new
+97 *151  2126  add one
+98 *152  1127  st new
+99 *153  9000  ja start
+               
+9A *154  0136  addO: ld o
+9B *155  2126  add one
+9C *156  1136  st o
+9D *157  0127  ld new
+9E *158  2126  add one
+9F *159  1127  st new
+A0 *160  9000  ja start
+               
+A1 *161  0137  addP: ld p
+A2 *162  2126  add one
+A3 *163  1137  st p
+A4 *164  0127  ld new
+A5 *165  2126  add one
+A6 *166  1127  st new
+A7 *167  9000  ja start
+               
+A8 *168  0138  addQ: ld q
+A9 *169  2126  add one
+AA *170  1138  st q
+AB *171  0127  ld new
+AC *172  2126  add one
+AD *173  1127  st new
+AE *174  9000  ja start
+               
+AF *175  0139  addR: ld r
+B0 *176  2126  add one
+B1 *177  1139  st r
+B2 *178  0127  ld new
+B3 *179  2126  add one
+B4 *180  1127  st new
+B5 *181  9000  ja start
+               
+B6 *182  013A  addS: ld s
+B7 *183  2126  add one
+B8 *184  113A  st s
+B9 *185  0127  ld new
+BA *186  2126  add one
+BB *187  1127  st new
+BC *188  9000  ja start
+               
+BD *189  013B  addT: ld t
+BE *190  2126  add one
+BF *191  113B  st t
+C0 *192  0127  ld new
+C1 *193  2126  add one
+C2 *194  1127  st new
+C3 *195  9000  ja start
+               
+C4 *196  013C  addU: ld u
+C5 *197  2126  add one
+C6 *198  113C  st u
+C7 *199  0127  ld new
+C8 *200  2126  add one
+C9 *201  1127  st new
+CA *202  9000  ja start
+               
+CB *203  013D  addV: ld v
+CC *204  2126  add one
+CD *205  113D  st v
+CE *206  0127  ld new
+CF *207  2126  add one
+D0 *208  1127  st new
+D1 *209  9000  ja start
+               
+D2 *210  013E  addW: ld w
+D3 *211  2126  add one
+D4 *212  113E  st w
+D5 *213  0127  ld new
+D6 *214  2126  add one
+D7 *215  1127  st new
+D8 *216  9000  ja start
+               
+D9 *217  013F  addX: ld x
+DA *218  2126  add one
+DB *219  113F  st x
+DC *220  0127  ld new
+DD *221  2126  add one
+DE *222  1127  st new
+DF *223  9000  ja start
+               
+E0 *224  0140  addY: ld y
+E1 *225  2126  add one
+E2 *226  1140  st y
+E3 *227  0127  ld new
+E4 *228  2126  add one
+E5 *229  1127  st new
+E6 *230  9000  ja start
+               
+E7 *231  0141  addZ: ld z
+E8 *232  2126  add one
+E9 *233  1141  st z
+EA *234  0127  ld new
+EB *235  2126  add one
+EC *236  1127  st new
+ED *237  9000  ja start
+               
+EE *238  816D  done: ldc msg2
+EF *239  FFF7  sout
+F0 *240  0128  ld a
+F1 *241  FFFD  dout
+F2 *242  0129  ld b
+F3 *243  FFFD  dout
+F4 *244  012A  ld c
+F5 *245  FFFD  dout
+F6 *246  012B  ld d
+F7 *247  FFFD  dout
+F8 *248  012C  ld e
+F9 *249  FFFD  dout
+FA *250  012D  ld f
+FB *251  FFFD  dout
+FC *252  012E  ld g
+FD *253  FFFD  dout
+FE *254  012F  ld h
+FF *255  FFFD  dout
+100*256  0130  ld i
+101*257  FFFD  dout
+102*258  0131  ld j
+103*259  FFFD  dout
+104*260  0132  ld k
+105*261  FFFD  dout
+106*262  0133  ld l
+107*263  FFFD  dout
+108*264  0134  ld m
+109*265  FFFD  dout
+10A*266  0135  ld n
+10B*267  FFFD  dout
+10C*268  0136  ld o
+10D*269  FFFD  dout
+10E*270  0137  ld p
+10F*271  FFFD  dout
+110*272  0138  ld q
+111*273  FFFD  dout
+112*274  0139  ld r
+113*275  FFFD  dout
+114*276  013A  ld s
+115*277  FFFD  dout
+116*278  013B  ld t
+117*279  FFFD  dout
+118*280  013C  ld u
+119*281  FFFD  dout
+11A*282  013D  ld v
+11B*283  FFFD  dout
+11C*284  013E  ld w
+11D*285  FFFD  dout
+11E*286  013F  ld x
+11F*287  FFFD  dout
+120*288  0140  ld y
+121*289  FFFD  dout
+122*290  0141  ld z
+123*291  FFFD  dout
+124*292  FFFF  halt
+125*293  0041  dif: dw 65
+126*294  0001  one: dw 1
+127*295  0000  new: dw 0
+128*296  0000  a: dw 0
+129*297  0000  b: dw 0
+12A*298  0000  c: dw 0
+12B*299  0000  d: dw 0
+12C*300  0000  e: dw 0
+12D*301  0000  f: dw 0
+12E*302  0000  g: dw 0
+12F*303  0000  h: dw 0
+130*304  0000  i: dw 0
+131*305  0000  j: dw 0
+132*306  0000  k: dw 0
+133*307  0000  l: dw 0
+134*308  0000  m: dw 0
+135*309  0000  n: dw 0
+136*310  0000  o: dw 0
+137*311  0000  p: dw 0
+138*312  0000  q: dw 0
+139*313  0000  r: dw 0
+13A*314  0000  s: dw 0
+13B*315  0000  t: dw 0
+13C*316  0000  u: dw 0
+13D*317  0000  v: dw 0
+13E*318  0000  w: dw 0
+13F*319  0000  x: dw 0
+140*320  0000  y: dw 0
+141*321  0000  z: dw 0
+142*322  0061  msg1: dw "abbcccddddfgghhhiiiijklmnopqqqrrssssttuvwz"
+143*323  0062
+144*324  0062
+145*325  0063
+146*326  0063
+147*327  0063
+148*328  0064
+149*329  0064
+14A*330  0064
+14B*331  0064
+14C*332  0066
+14D*333  0067
+14E*334  0067
+14F*335  0068
+150*336  0068
+151*337  0068
+152*338  0069
+153*339  0069
+154*340  0069
+155*341  0069
+156*342  006A
+157*343  006B
+158*344  006C
+159*345  006D
+15A*346  006E
+15B*347  006F
+15C*348  0070
+15D*349  0071
+15E*350  0071
+15F*351  0071
+160*352  0072
+161*353  0072
+162*354  0073
+163*355  0073
+164*356  0073
+165*357  0073
+166*358  0074
+167*359  0074
+168*360  0075
+169*361  0076
+16A*362  0077
+16B*363  007A
+16C*364  0000
+16D*365  0064  msg2: dw "displaying all the numbers now"
+16E*366  0069
+16F*367  0073
+170*368  0070
+171*369  006C
+172*370  0061
+173*371  0079
+174*372  0069
+175*373  006E
+176*374  0067
+177*375  0020
+178*376  0061
+179*377  006C
+17A*378  006C
+17B*379  0020
+17C*380  0074
+17D*381  0068
+17E*382  0065
+17F*383  0020
+180*384  006E
+181*385  0075
+182*386  006D
+183*387  0062
+184*388  0065
+185*389  0072
+186*390  0073
+187*391  0020
+188*392  006E
+189*393  006F
+18A*394  0077
+18B*395  0000
+18C*396  ========= end of assignment4.mas ========================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ start                     0           3E  45  4C  53  5A 
+                                       61  68  6F  76  7D 
+                                       84  8B  92  99  A0 
+                                       A7  AE  B5  BC  C3 
+                                       CA  D1  D8  DF  E6 
+                                       ED 
+ addA                      38          5  
+ addB                      3F          7  
+ addC                      46          9  
+ addD                      4D          B  
+ addE                      54          D  
+ addF                      5B          F  
+ addG                      62          11 
+ addH                      69          13 
+ addI                      70          15 
+ addJ                      77          17 
+ addK                      7E          19 
+ addL                      85          1B 
+ addM                      8C          1D 
+ addN                      93          1F 
+ addO                      9A          21 
+ addP                      A1          23 
+ addQ                      A8          25 
+ addR                      AF          27 
+ addS                      B6          29 
+ addT                      BD          2B 
+ addU                      C4          2D 
+ addV                      CB          2F 
+ addW                      D2          31 
+ addX                      D9          33 
+ addY                      E0          35 
+ addZ                      E7          37 
+ done                      EE          3  
+ dif                       125         4  
+ one                       126         6   8   A   C   E  
+                                       10  12  14  16  18 
+                                       1A  1C  1E  20  22 
+                                       24  26  28  2A  2C 
+                                       2E  30  32  34  36 
+                                       39  3C  40  43  47 
+                                       4A  4E  51  55  58 
+                                       5C  5F  63  66  6A 
+                                       6D  71  74  78  7B 
+                                       7F  82  86  89  8D 
+                                       90  94  97  9B  9E 
+                                       A2  A5  A9  AC  B0 
+                                       B3  B7  BA  BE  C1 
+                                       C5  C8  CC  CF  D3 
+                                       D6  DA  DD  E1  E4 
+                                       E8  EB 
+ new                       127         1   3B  3D  42  44 
+                                       49  4B  50  52  57 
+                                       59  5E  60  65  67 
+                                       6C  6E  73  75  7A 
+                                       7C  81  83  88  8A 
+                                       8F  91  96  98  9D 
+                                       9F  A4  A6  AB  AD 
+                                       B2  B4  B9  BB  C0 
+                                       C2  C7  C9  CE  D0 
+                                       D5  D7  DC  DE  E3 
+                                       E5  EA  EC 
+ a                         128         38  3A  F0 
+ b                         129         3F  41  F2 
+ c                         12A         46  48  F4 
+ d                         12B         4D  4F  F6 
+ e                         12C         54  56  F8 
+ f                         12D         5B  5D  FA 
+ g                         12E         62  64  FC 
+ h                         12F         69  6B  FE 
+ i                         130         70  72  100
+ j                         131         77  79  102
+ k                         132         7E  80  104
+ l                         133         85  87  106
+ m                         134         8C  8E  108
+ n                         135         93  95  10A
+ o                         136         9A  9C  10C
+ p                         137         A1  A3  10E
+ q                         138         A8  AA  110
+ r                         139         AF  B1  112
+ s                         13A         B6  B8  114
+ t                         13B         BD  BF  116
+ u                         13C         C4  C6  118
+ v                         13D         CB  CD  11A
+ w                         13E         D2  D4  11C
+ x                         13F         D9  DB  11E
+ y                         140         E0  E2  120
+ z                         141         E7  E9  122
+ msg1                      142         0  
+ msg2                      16D         EE 
+
+Input file   = assignment4.mas
+Output file  = assignment4.mac
+List file    = assignment4.lst 
+Number base  = decimal
+Label status = case sensitive

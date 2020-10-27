@@ -1,0 +1,21 @@
+ldc msg1
+ldi
+sub dif
+jzop
+add thirtn
+jzop
+add seven
+jzop
+add three
+jzop
+add one
+
+
+st dif
+halt
+msg1: dw "what in the fuck is this?"
+dif: dw 90
+thirtn: dw 13
+seven: dw 7
+three: dw 3
+one: dw 1

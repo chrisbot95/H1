@@ -1,0 +1,22 @@
+!s4
+ldc msg1
+sout
+ld first
+bitswap
+hout
+ldc 10
+aout
+
+ldc msg2
+sout
+ld first
+push
+ld second
+or
+hout
+pop
+halt
+first: dw 36DFh
+second: dw 1111h
+msg1: dw "36DF bitswapped: "
+msg2: dw "36DF or 1111: "

@@ -1,0 +1,50 @@
+loop: ldc msg1      ;load message that asks for user input
+sout                ;display message asking user to input string
+ldc string          ;load the address of the first letter in the group of strings
+add new             ;skip ahead to an empty address to allow space for a new string
+sin                 ;user enters the string
+loop1:ld new
+add one
+st new 
+ldc string   
+add new             
+ldi                 ;load what is in that address
+jnz loop1           ;if 
+ldc msg2
+sout
+ain
+sub diff
+jzop loop
+halt 
+msg1: dw "enter a string of characters"
+msg2: dw "would you like to enter another string y/n?"
+diff: dw 120
+new: dw 0 
+one: dw 1
+a: dw 0
+b: dw 0
+c: dw 0
+d: dw 0
+e: dw 0
+f: dw 0
+g: dw 0
+h: dw 0
+i: dw 0
+j: dw 0
+k: dw 0
+l: dw 0
+m: dw 0
+n: dw 0
+o: dw 0
+p: dw 0
+q: dw 0
+r: dw 0
+s: dw 0
+t: dw 0
+u: dw 0
+v: dw 0
+w: dw 0
+x: dw 0
+y: dw 0
+z: dw 0
+string: dw 13

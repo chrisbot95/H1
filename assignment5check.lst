@@ -1,0 +1,227 @@
+Machine-level Assembler Version 6.3    Wed Oct 07 20:45:27 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    805D  Loop1:  ldc msg1      ;ask user for input
+1  *1    FFF7          sout                
+2  *2    00A7          ld newline
+3  *3    FFFB          aout
+4  *4    80CC          ldc string          
+5  *5    20AC          add new             
+6  *6    FFF6          sin                 
+7  *7    00A7          ld newline
+8  *8    FFFB          aout
+9  *9    00AC  Loop2:  ld new        ;update "new" to point at the end of strin
+A  *10   20AD          add one
+B  *11   10AC          st new
+C  *12   80CC          ldc string
+D  *13   20AC          add new
+E  *14   F100          ldi
+F  *15   D009          jnz Loop2           
+10 *16   807B          ldc msg2      ;ask if the user wants to input another st
+11 *17   FFF7          sout
+12 *18   00A7          ld newline
+13 *19   FFFB          aout
+14 *20   FFFA          ain
+15 *21   30A9          sub uplim
+16 *22   A000          jzop Loop1
+17 *23   00AC          ld new
+18 *24   30AC          sub new 
+19 *25   10AC          st new
+1A *26   00A7          ld newline
+1B *27   FFFB          aout
+1C *28   80CC  Begin:  ldc string    ;program goes through the letters and coun
+1D *29   20AC          add new
+1E *30   F100          ldi
+1F *31   C045          jz Done
+20 *32   30AE          sub lowlim
+21 *33   A032          jzop Lower
+22 *34   20AE          add lowlim     ;letter is uppercase
+23 *35   30AA          sub upp
+24 *36   B041          jn Skip
+25 *37   105C          st x
+26 *38   80B1          ldc table
+27 *39   205C          add x
+28 *40   F100          ldi
+29 *41   20AD          add one
+2A *42   F300          push
+2B *43   80B1          ldc table
+2C *44   205C          add x
+2D *45   F200          sti
+2E *46   00AC          ld new
+2F *47   20AD          add one
+30 *48   10AC          st new
+31 *49   901C          ja Begin
+32 *50   20AE  Lower:  add lowlim     ;letter is lower case
+33 *51   30AB          sub low
+34 *52   B041          jn Skip
+35 *53   30AF          sub alph
+36 *54   A041          jzop Skip
+37 *55   20AF          add alph
+38 *56   105C          st x
+39 *57   80B1          ldc table
+3A *58   205C          add x
+3B *59   F100          ldi
+3C *60   20AD          add one
+3D *61   F300          push
+3E *62   80B1          ldc table
+3F *63   205C          add x
+40 *64   F200          sti
+41 *65   00AC  Skip:   ld new
+42 *66   20AD          add one
+43 *67   10AC          st new
+44 *68   901C          ja Begin
+45 *69   00AC  Done:   ld new     ;reset new
+46 *70   30AC          sub new
+47 *71   10AC          st new
+48 *72   00AC  Dloop:  ld new      ;display loop
+49 *73   20AA          add upp
+4A *74   FFFB          aout 
+4B *75   00A8          ld colon
+4C *76   FFFB          aout
+4D *77   80B1          ldc table
+4E *78   20AC          add new
+4F *79   F100          ldi
+50 *80   FFFD          dout
+51 *81   00A7          ld newline
+52 *82   FFFB          aout
+53 *83   00AC          ld new
+54 *84   20AD          add one
+55 *85   10AC          st new
+56 *86   00AF          ld alph
+57 *87   30AD          sub one
+58 *88   10AF          st alph
+59 *89   C05B          jz Quit
+5A *90   9048          ja Dloop
+5B *91   FFFF  Quit:   halt 
+5C *92   0000  x:      dw 0
+5D *93   0065  msg1:   dw "enter a string of characters:"
+5E *94   006E
+5F *95   0074
+60 *96   0065
+61 *97   0072
+62 *98   0020
+63 *99   0061
+64 *100  0020
+65 *101  0073
+66 *102  0074
+67 *103  0072
+68 *104  0069
+69 *105  006E
+6A *106  0067
+6B *107  0020
+6C *108  006F
+6D *109  0066
+6E *110  0020
+6F *111  0063
+70 *112  0068
+71 *113  0061
+72 *114  0072
+73 *115  0061
+74 *116  0063
+75 *117  0074
+76 *118  0065
+77 *119  0072
+78 *120  0073
+79 *121  003A
+7A *122  0000
+7B *123  0077  msg2:   dw "would you like to enter another string y/n?"
+7C *124  006F
+7D *125  0075
+7E *126  006C
+7F *127  0064
+80 *128  0020
+81 *129  0079
+82 *130  006F
+83 *131  0075
+84 *132  0020
+85 *133  006C
+86 *134  0069
+87 *135  006B
+88 *136  0065
+89 *137  0020
+8A *138  0074
+8B *139  006F
+8C *140  0020
+8D *141  0065
+8E *142  006E
+8F *143  0074
+90 *144  0065
+91 *145  0072
+92 *146  0020
+93 *147  0061
+94 *148  006E
+95 *149  006F
+96 *150  0074
+97 *151  0068
+98 *152  0065
+99 *153  0072
+9A *154  0020
+9B *155  0073
+9C *156  0074
+9D *157  0072
+9E *158  0069
+9F *159  006E
+A0 *160  0067
+A1 *161  0020
+A2 *162  0079
+A3 *163  002F
+A4 *164  006E
+A5 *165  003F
+A6 *166  0000
+A7 *167  000A  newline:dw 10
+A8 *168  003A  colon:  dw ':'
+A9 *169  0078  uplim:  dw 120
+AA *170  0041  upp:    dw 65
+AB *171  0061  low:    dw 97
+AC *172  0000  new:    dw 0 
+AD *173  0001  one:    dw 1
+AE *174  005B  lowlim: dw 91
+AF *175  001A  alph:   dw 26
+B0 *176  007D  counter:dw 125
+B1 *177  0000  table:  dw 26 dup 0
+CB *203  0000          dw 0
+CC *204  0000  string: dw 0
+CD *205  ========= end of assignment5check.mas ===================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ Loop1                     0           16 
+ Loop2                     9           F  
+ Begin                     1C          31  44 
+ Lower                     32          21 
+ Skip                      41          24  34  36 
+ Done                      45          1F 
+ Dloop                     48          5A 
+ Quit                      5B          59 
+ x                         5C          25  27  2C  38  3A 
+                                       3F 
+ msg1                      5D          0  
+ msg2                      7B          10 
+ newline                   A7          2   7   12  1A  51 
+ colon                     A8          4B 
+ uplim                     A9          15 
+ upp                       AA          23  49 
+ low                       AB          33 
+ new                       AC          5   9   B   D   17 
+                                       18  19  1D  2E  30 
+                                       41  43  45  46  47 
+                                       48  4E  53  55 
+ one                       AD          A   29  2F  3C  42 
+                                       54  57 
+ lowlim                    AE          20  22  32 
+ alph                      AF          35  37  56  58 
+ counter                   B0         
+ table                     B1          26  2B  39  3E  4D 
+ string                    CC          4   C   1C 
+
+Input file   = assignment5check.mas
+Output file  = assignment5check.mac
+List file    = assignment5check.lst 
+Number base  = decimal
+Label status = case sensitive

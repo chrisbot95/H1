@@ -1,0 +1,51 @@
+Machine-level Assembler Version 6.3    Thu Sep 24 22:21:00 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    8018  ldc count
+1  *1    2016  add x
+2  *2    F100  ldi
+3  *3    2017  add one
+4  *4    F300  push
+5  *5    8018  ldc count
+6  *6    2016  add x
+7  *7    F200  sti
+8  *8    8018  loop: ldc count
+9  *9    2015  add new
+A  *10   F100  ldi
+B  *11   FFFD  dout
+C  *12   0015  ld new
+D  *13   2017  add one
+E  *14   1015  st new
+F  *15   0032  ld counter
+10 *16   3017  sub one
+11 *17   1032  st counter
+12 *18   D008  jnz loop
+13 *19   F100  ldi
+14 *20   FFFF  halt
+15 *21   0000  new: dw 0
+16 *22   000F  x: dw 15
+17 *23   0001  one: dw 1
+18 *24   0000  count: dw 26 dup 0
+32 *50   001A  counter: dw 26
+33 *51   ========= end of assignmentbeta2.mas ====================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ loop                      8           12 
+ new                       15          9   C   E  
+ x                         16          1   6  
+ one                       17          3   D   10 
+ count                     18          0   5   8  
+ counter                   32          F   11 
+
+Input file   = assignmentbeta2.mas
+Output file  = assignmentbeta2.mac
+List file    = assignmentbeta2.lst 
+Number base  = decimal
+Label status = case sensitive

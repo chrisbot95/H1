@@ -1,0 +1,39 @@
+Machine-level Assembler Version 6.3    Wed Sep 16 17:36:26 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    8041  ldc 65
+1  *1    100F  st char
+2  *2    000F  loop: ld char
+3  *3    FFFB  aout
+4  *4    FFFD  dout
+5  *5    FFF9  hout
+6  *6    200D  add one
+7  *7    100F  st char
+8  *8    000E  ld count
+9  *9    300D  sub one
+A  *10   100E  st count
+B  *11   D002  jnz loop
+C  *12   FFFF  halt
+D  *13   0001  one: dw 1
+E  *14   001A  count: dw 26
+F  *15   0000  char: dw 0
+10 *16   ========= end of ascii.mas ==============================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ loop                      2           B  
+ one                       D           6   9  
+ count                     E           8   A  
+ char                      F           1   2   7  
+
+Input file   = ascii.mas
+Output file  = ascii.mac
+List file    = ascii.lst 
+Number base  = decimal
+Label status = case sensitive

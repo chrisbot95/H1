@@ -1,0 +1,16 @@
+din
+st num
+loop: ld sum
+add num
+st sum
+ld count
+sub one
+st count
+jnz loop
+ld sum
+dout
+halt
+one: dw 1
+sum: dw 4
+num: dw 0
+count: dw 10

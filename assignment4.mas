@@ -1,0 +1,351 @@
+start: ldc msg1
+add new
+ldi
+jz done
+sub dif
+jz addA
+sub one
+jz addB
+sub one
+jz addC
+sub one
+jz addD
+sub one
+jz addE
+sub one
+jz addF
+sub one
+jz addG
+sub one
+jz addH
+sub one
+jz addI
+sub one
+jz addJ
+sub one
+jz addK
+sub one
+jz addL
+sub one
+jz addM
+sub one
+jz addN
+sub one
+jz addO
+sub one
+jz addP
+sub one
+jz addQ
+sub one
+jz addR
+sub one
+jz addS
+sub one
+jz addT
+sub one
+jz addU
+sub one
+jz addV
+sub one
+jz addW
+sub one
+jz addX
+sub one
+jz addY
+sub one
+jz addZ
+
+addA: ld a
+add one
+st a
+ld new
+add one
+st new
+ja start
+
+addB: ld b
+add one
+st b
+ld new
+add one
+st new
+ja start
+
+addC: ld c
+add one
+st c
+ld new
+add one
+st new
+ja start
+
+addD: ld d
+add one
+st d
+ld new
+add one
+st new
+ja start
+
+addE: ld e
+add one
+st e
+ld new
+add one
+st new
+ja start
+
+addF: ld f
+add one
+st f
+ld new
+add one
+st new
+ja start
+
+addG: ld g
+add one
+st g
+ld new
+add one
+st new
+ja start
+
+addH: ld h
+add one
+st h
+ld new
+add one
+st new
+ja start
+
+addI: ld i
+add one
+st i
+ld new
+add one
+st new
+ja start
+
+addJ: ld j
+add one
+st j
+ld new
+add one
+st new
+ja start
+
+addK: ld k
+add one
+st k
+ld new
+add one
+st new
+ja start
+
+addL: ld l
+add one
+st l
+ld new
+add one
+st new
+ja start
+
+addM: ld m
+add one
+st m
+ld new
+add one
+st new
+ja start
+
+addN: ld n
+add one
+st n
+ld new
+add one
+st new
+ja start
+
+addO: ld o
+add one
+st o
+ld new
+add one
+st new
+ja start
+
+addP: ld p
+add one
+st p
+ld new
+add one
+st new
+ja start
+
+addQ: ld q
+add one
+st q
+ld new
+add one
+st new
+ja start
+
+addR: ld r
+add one
+st r
+ld new
+add one
+st new
+ja start
+
+addS: ld s
+add one
+st s
+ld new
+add one
+st new
+ja start
+
+addT: ld t
+add one
+st t
+ld new
+add one
+st new
+ja start
+
+addU: ld u
+add one
+st u
+ld new
+add one
+st new
+ja start
+
+addV: ld v
+add one
+st v
+ld new
+add one
+st new
+ja start
+
+addW: ld w
+add one
+st w
+ld new
+add one
+st new
+ja start
+
+addX: ld x
+add one
+st x
+ld new
+add one
+st new
+ja start
+
+addY: ld y
+add one
+st y
+ld new
+add one
+st new
+ja start
+
+addZ: ld z
+add one
+st z
+ld new
+add one
+st new
+ja start
+
+done: ldc msg2
+sout
+ld a
+dout
+ld b
+dout
+ld c
+dout
+ld d
+dout
+ld e
+dout
+ld f
+dout
+ld g
+dout
+ld h
+dout
+ld i
+dout
+ld j
+dout
+ld k
+dout
+ld l
+dout
+ld m
+dout
+ld n
+dout
+ld o
+dout
+ld p
+dout
+ld q
+dout
+ld r
+dout
+ld s
+dout
+ld t
+dout
+ld u
+dout
+ld v
+dout
+ld w
+dout
+ld x
+dout
+ld y
+dout
+ld z
+dout
+halt
+dif: dw 65
+one: dw 1
+new: dw 0
+a: dw 0
+b: dw 0
+c: dw 0
+d: dw 0
+e: dw 0
+f: dw 0
+g: dw 0
+h: dw 0
+i: dw 0
+j: dw 0
+k: dw 0
+l: dw 0
+m: dw 0
+n: dw 0
+o: dw 0
+p: dw 0
+q: dw 0
+r: dw 0
+s: dw 0
+t: dw 0
+u: dw 0
+v: dw 0
+w: dw 0
+x: dw 0
+y: dw 0
+z: dw 0
+msg1: dw "abbcccddddfgghhhiiiijklmnopqqqrrssssttuvwz"
+msg2: dw "displaying all the numbers now"
