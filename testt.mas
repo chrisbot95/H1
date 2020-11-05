@@ -1,0 +1,5 @@
+!s4
+ldc x
+mult4
+halt 
+x: dw 1

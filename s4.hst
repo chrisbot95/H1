@@ -1,4 +1,4 @@
-Horizontal Microcode Assembler Version 6.3      Tue Oct 27 10:53:06 2020
+Horizontal Microcode Assembler Version 6.3      Wed Nov 04 20:54:39 2020
 
   LOC    OBJECT    SOURCE
 hex*dec
@@ -57,51 +57,51 @@ F  *15   52818218  L11:        dc = left(dc); if (s) goto L111;
 24 *36   5281828B  LF_010:     dc = left(dc); if (s) goto LF_5;
 25 *37   00000688              goto LF_4;
 26 *38   5281822F  LF_11:      dc = left(dc); if (s) goto LF_111; 
-27 *39   528182B6  LF_110:     dc = left(dc); if (s) goto LF_D;
-28 *40   000006B6              goto LF_C;
+27 *39   528182BB  LF_110:     dc = left(dc); if (s) goto LF_D;
+28 *40   000006BB              goto LF_C;
 29 *41   52818285  LF_001:     dc = left(dc); if (s) goto LF_3;
 2A *42   00000681              goto LF_2;
 2B *43   5281828F  LF_011:     dc = left(dc); if (s) goto LF_7;
 2C *44   0000068D              goto LF_6;
-2D *45   528182B6  LF_101:     dc = left(dc); if (s) goto LF_B;
+2D *45   528182BB  LF_101:     dc = left(dc); if (s) goto LF_B;
 2E *46   000006B6              goto LF_A;
 2F *47   52818231  LF_111:     dc = left(dc); if (s) goto LF_F;
-30 *48   000006B6              goto LF_E;
+30 *48   000006BB              goto LF_E;
                    
 31 *49   52818236  LF_F:       dc = left(dc); if (s) goto LF_F_1;
 32 *50   5281823A  LF_F_0:     dc = left(dc); if (s) goto LF_F_01;
 33 *51   52818240  LF_F_00:    dc = left(dc); if (s) goto LF_F_001;
-34 *52   528182B6  LF_F_000:   dc = left(dc); if (s) goto LF_F_0001;
-35 *53   000006B6              goto LF_F_0000;
+34 *52   528182BB  LF_F_000:   dc = left(dc); if (s) goto LF_F_0001;
+35 *53   000006BB              goto LF_F_0000;
 36 *54   5281823D  LF_F_1:     dc = left(dc); if (s) goto LF_F_11
 37 *55   52818244  LF_F_10:    dc = left(dc); if (s) goto LF_F_101;
-38 *56   528182B6  LF_F_100:   dc = left(dc); if (s) goto LF_F_9;
-39 *57   000006B6              goto LF_F_8;
+38 *56   528182BB  LF_F_100:   dc = left(dc); if (s) goto LF_F_9;
+39 *57   000006BB              goto LF_F_8;
 3A *58   52818242  LF_F_01:    dc = left(dc); if (s) goto LF_F_011;
-3B *59   528182B6  LF_F_010:   dc = left(dc); if (s) goto LF_F_5;
-3C *60   000006B6              goto LF_F_4;
+3B *59   528182BB  LF_F_010:   dc = left(dc); if (s) goto LF_F_5;
+3C *60   000006BB              goto LF_F_4;
 3D *61   52818246  LF_F_11:    dc = left(dc); if (s) goto LF_F_111
-3E *62   528182B6  LF_F_110:   dc = left(dc); if (s) goto LF_F_D;
-3F *63   000006B6              goto LF_F_C;
-40 *64   528182B6  LF_F_001:   dc = left(dc); if (s) goto LF_F_3;
-41 *65   000006B6              goto LF_F_2;
-42 *66   528182B6  LF_F_011:   dc = left(dc); if (s) goto LF_F_7;
-43 *67   000006B6              goto LF_F_6;
-44 *68   528182B6  LF_F_101:   dc = left(dc); if (s) goto LF_F_B;
-45 *69   000006B6              goto LF_F_A;
+3E *62   528182BB  LF_F_110:   dc = left(dc); if (s) goto LF_F_D;
+3F *63   000006BB              goto LF_F_C;
+40 *64   528182BB  LF_F_001:   dc = left(dc); if (s) goto LF_F_3;
+41 *65   000006BB              goto LF_F_2;
+42 *66   528182BB  LF_F_011:   dc = left(dc); if (s) goto LF_F_7;
+43 *67   000006BB              goto LF_F_6;
+44 *68   528182BB  LF_F_101:   dc = left(dc); if (s) goto LF_F_B;
+45 *69   000006BB              goto LF_F_A;
 46 *70   52818248  LF_F_111:   dc = left(dc); if (s) goto LF_F_F;
-47 *71   000006B6              goto LF_F_E;
+47 *71   000006BB              goto LF_F_E;
                    
 48 *72   52818200  LF_F_F:     dc = left(dc); if (s) goto fetch
 49 *73   5281824F  LF_F_F_0:   dc = left(dc); if (s) goto LF_F_F_01
 4A *74   5281824D  LF_F_F_00:  dc = left(dc); if (s) goto LF_F_F_001
-4B *75   528182B6  LF_F_F_000: dc = left(dc); if (s) goto LF_F_F_0001;
-4C *76   000006B6              goto LF_F_F_0000;
-4D *77   528182B6  LF_F_F_001: dc = left(dc); if (s) goto LF_F_F_3
-4E *78   000006B6              goto LF_F_F_2; 
+4B *75   528182BB  LF_F_F_000: dc = left(dc); if (s) goto LF_F_F_0001;
+4C *76   000006BB              goto LF_F_F_0000;
+4D *77   528182BB  LF_F_F_001: dc = left(dc); if (s) goto LF_F_F_3
+4E *78   000006BB              goto LF_F_F_2; 
 4F *79   52818200  LF_F_F_01:  dc = left(dc); if (s) goto fetch;
 50 *80   52818200  LF_F_F_010: dc = left(dc); if (s) goto fetch;
-51 *81   000006B6              goto LF_F_F_4;
+51 *81   000006BB              goto LF_F_F_4;
                    
                    /***********************************************************
                    /           Microcode for each instruction                  
@@ -235,7 +235,12 @@ B2 *178  7BDF0000              f = f + f;
 B3 *179  421E8000              ac = ac & f;
 B4 *180  4201C000              ac = right(ac);
 B5 *181  421B0600              ac = ac + d; goto fetch;
-                   LF_A:       /-----------------------------------------------
+                   LF_A:       /------------------------ mult4 ----------------
+B6 *182  00102000              mar = ac;
+B7 *183  00001000              rd;
+B8 *184  294B0000              mdr = mdr + mdr;
+B9 *185  294B0000              mdr = mdr + mdr;
+BA *186  00000E00              wr; goto fetch;
                    LF_B:       /-----------------------------------------------
                    LF_C:       /-----------------------------------------------
                    LF_D:       /-----------------------------------------------
@@ -260,8 +265,8 @@ B5 *181  421B0600              ac = ac + d; goto fetch;
                    LF_F_F_2:   /-----------------------------------------------
                    LF_F_F_3:   /-----------------------------------------------
                    LF_F_F_4:   /-----------------------------------------------
-B6 *182  00000600              goto fetch;
-B7 *183  ============= end of s4.has =============================
+BB *187  00000600              goto fetch;
+BC *188  ============= end of s4.has =============================
 
 Input file   = s4.has
 Output file  = s4.hor

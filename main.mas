@@ -1,0 +1,3 @@
+call b
+halt
+extern b

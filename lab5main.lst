@@ -1,0 +1,33 @@
+Machine-level Assembler Version 6.3    Wed Nov 04 19:57:54 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    E000  main: call sub
+1  *1    1000  st total
+2  *2    FFFF  halt
+3  *3    0011  x: dw 17
+4  *4    0003  Y: dw 3
+               extern sub
+               extern total
+               public x
+               public Y
+5  *5    ========= end of lab5main.mas ===========================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ main                      0          
+ x                         3           5  
+ Y                         4           5  
+ sub                       ext         5   0  
+ total                     ext         5   1  
+
+Input file   = lab5main.mas
+Output file  = lab5main.mob
+List file    = lab5main.lst 
+Number base  = decimal
+Label status = case sensitive

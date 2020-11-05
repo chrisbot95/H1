@@ -1,0 +1,5 @@
+c: ldc msg1
+sout
+ret
+msg1: dw "in c"
+public c

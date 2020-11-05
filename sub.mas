@@ -1,0 +1,12 @@
+sub: ld x
+add y
+sub Y
+st x
+ret
+y: dw 34
+total: dw 0
+public sub
+public total
+public y
+extern x
+extern Y

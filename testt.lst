@@ -1,0 +1,26 @@
+Machine-level Assembler Version 6.3    Wed Nov 04 20:55:04 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+               !s4
+0  *0    8003  ldc x
+1  *1    FA00  mult4
+2  *2    FFFF  halt 
+3  *3    0001  x: dw 1
+4  *4    ========= end of testt.mas ==============================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ x                         3           0  
+
+Input file   = testt.mas
+Output file  = testt.mac
+List file    = testt.lst 
+Config file  = s4.cfg 
+Number base  = decimal
+Label status = case sensitive
