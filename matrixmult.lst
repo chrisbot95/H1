@@ -1,0 +1,280 @@
+Machine-level Assembler Version 6.3    Wed Nov 11 21:19:05 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+0  *0    8062          ldc msg1
+1  *1    FFF7          sout
+2  *2    800A          ldc '\n'
+3  *3    FFFB          aout
+4  *4    FFFC          din
+5  *5    1043          st n
+6  *6    F300          push
+7  *7    E031          call mult
+8  *8    F400          pop
+9  *9    1044          st msize
+A  *10   809B          ldc msg2
+B  *11   FFF7          sout
+C  *12   800A          ldc '\n'
+D  *13   FFFB          aout
+E  *14   0044          ld msize
+F  *15   1047          st count
+10 *16   FFFC  loopm1: din
+11 *17   F300          push
+12 *18   80E7          ldc matrixA
+13 *19   2045          add index
+14 *20   F200          sti
+15 *21   0045          ld index
+16 *22   2040          add one
+17 *23   1045          st index
+18 *24   0047          ld count
+19 *25   3040          sub one
+1A *26   1047          st count
+1B *27   D010          jnz loopm1
+               
+1C *28   80C1          ldc msg3
+1D *29   FFF7          sout
+1E *30   800A          ldc '\n'
+1F *31   FFFB          aout
+20 *32   0044          ld msize
+21 *33   1047          st count
+22 *34   8000          ldc 0
+23 *35   1045          st index
+24 *36   FFFC  loopm2: din
+25 *37   F300          push
+26 *38   814B          ldc matrixB
+27 *39   2045          add index
+28 *40   F200          sti
+29 *41   0045          ld index
+2A *42   2040          add one
+2B *43   1045          st index
+2C *44   0047          ld count
+2D *45   3040          sub one
+2E *46   1047          st count
+2F *47   D024          jnz loopm2
+30 *48   903E          ja done
+               
+               
+31 *49   1041  mult:   st op1
+32 *50   4001          ldr 1
+33 *51   1042          st op2
+34 *52   003F  loopm:  ld sum
+35 *53   2041          add op1
+36 *54   103F          st sum
+37 *55   0042          ld op2
+38 *56   3040          sub one
+39 *57   1042          st op2
+3A *58   D034          jnz loopm
+3B *59   003F          ld sum
+3C *60   5001          str 1
+3D *61   F000          ret
+               
+3E *62   FFFF  done:   halt
+3F *63   0000  sum:    dw 0
+40 *64   0001  one:    dw 1
+41 *65   0000  op1:    dw 0
+42 *66   0000  op2:    dw 0
+43 *67   0000  n:      dw 0
+44 *68   0000  msize:  dw 0
+45 *69   0000  index:  dw 0
+46 *70   0000  temp:   dw 0
+47 *71   0000  count:  dw 0
+48 *72   0049  msg0:   dw "Is there another problem?"
+49 *73   0073
+4A *74   0020
+4B *75   0074
+4C *76   0068
+4D *77   0065
+4E *78   0072
+4F *79   0065
+50 *80   0020
+51 *81   0061
+52 *82   006E
+53 *83   006F
+54 *84   0074
+55 *85   0068
+56 *86   0065
+57 *87   0072
+58 *88   0020
+59 *89   0070
+5A *90   0072
+5B *91   006F
+5C *92   0062
+5D *93   006C
+5E *94   0065
+5F *95   006D
+60 *96   003F
+61 *97   0000
+62 *98   0070  msg1:   dw "please enter the value 'n' for the size of the matri
+63 *99   006C
+64 *100  0065
+65 *101  0061
+66 *102  0073
+67 *103  0065
+68 *104  0020
+69 *105  0065
+6A *106  006E
+6B *107  0074
+6C *108  0065
+6D *109  0072
+6E *110  0020
+6F *111  0074
+70 *112  0068
+71 *113  0065
+72 *114  0020
+73 *115  0076
+74 *116  0061
+75 *117  006C
+76 *118  0075
+77 *119  0065
+78 *120  0020
+79 *121  0027
+7A *122  006E
+7B *123  0027
+7C *124  0020
+7D *125  0066
+7E *126  006F
+7F *127  0072
+80 *128  0020
+81 *129  0074
+82 *130  0068
+83 *131  0065
+84 *132  0020
+85 *133  0073
+86 *134  0069
+87 *135  007A
+88 *136  0065
+89 *137  0020
+8A *138  006F
+8B *139  0066
+8C *140  0020
+8D *141  0074
+8E *142  0068
+8F *143  0065
+90 *144  0020
+91 *145  006D
+92 *146  0061
+93 *147  0074
+94 *148  0072
+95 *149  0069
+96 *150  0063
+97 *151  0065
+98 *152  0073
+99 *153  003A
+9A *154  0000
+9B *155  0070  msg2:   dw "please enter the values for matrix A:"
+9C *156  006C
+9D *157  0065
+9E *158  0061
+9F *159  0073
+A0 *160  0065
+A1 *161  0020
+A2 *162  0065
+A3 *163  006E
+A4 *164  0074
+A5 *165  0065
+A6 *166  0072
+A7 *167  0020
+A8 *168  0074
+A9 *169  0068
+AA *170  0065
+AB *171  0020
+AC *172  0076
+AD *173  0061
+AE *174  006C
+AF *175  0075
+B0 *176  0065
+B1 *177  0073
+B2 *178  0020
+B3 *179  0066
+B4 *180  006F
+B5 *181  0072
+B6 *182  0020
+B7 *183  006D
+B8 *184  0061
+B9 *185  0074
+BA *186  0072
+BB *187  0069
+BC *188  0078
+BD *189  0020
+BE *190  0041
+BF *191  003A
+C0 *192  0000
+C1 *193  0070  msg3:   dw "please enter the values for matrix B:"
+C2 *194  006C
+C3 *195  0065
+C4 *196  0061
+C5 *197  0073
+C6 *198  0065
+C7 *199  0020
+C8 *200  0065
+C9 *201  006E
+CA *202  0074
+CB *203  0065
+CC *204  0072
+CD *205  0020
+CE *206  0074
+CF *207  0068
+D0 *208  0065
+D1 *209  0020
+D2 *210  0076
+D3 *211  0061
+D4 *212  006C
+D5 *213  0075
+D6 *214  0065
+D7 *215  0073
+D8 *216  0020
+D9 *217  0066
+DA *218  006F
+DB *219  0072
+DC *220  0020
+DD *221  006D
+DE *222  0061
+DF *223  0074
+E0 *224  0072
+E1 *225  0069
+E2 *226  0078
+E3 *227  0020
+E4 *228  0042
+E5 *229  003A
+E6 *230  0000
+E7 *231  0000  matrixA:dw 100 dup 0
+14B*331  0000  matrixB:dw 100 dup 0
+1AF*431  0000  matrixC:dw 100 dup 0
+213*531  ========= end of matrixmult.mas =========================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ loopm1                    10          1B 
+ loopm2                    24          2F 
+ mult                      31          7  
+ loopm                     34          3A 
+ done                      3E          30 
+ sum                       3F          34  36  3B 
+ one                       40          16  19  2A  2D  38 
+ op1                       41          31  35 
+ op2                       42          33  37  39 
+ n                         43          5  
+ msize                     44          9   E   20 
+ index                     45          13  15  17  23  27 
+                                       29  2B 
+ temp                      46         
+ count                     47          F   18  1A  21  2C 
+                                       2E 
+ msg0                      48         
+ msg1                      62          0  
+ msg2                      9B          A  
+ msg3                      C1          1C 
+ matrixA                   E7          12 
+ matrixB                   14B         26 
+ matrixC                   1AF        
+
+Input file   = matrixmult.mas
+Output file  = matrixmult.mac
+List file    = matrixmult.lst 
+Number base  = decimal
+Label status = case sensitive
