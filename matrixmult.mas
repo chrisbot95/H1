@@ -14,7 +14,7 @@
         aout
         ld msize
         st count
-loopm1: din
+loopm1: din             ;start inputing numbers into matrixA
         push
         ldc matrixA
         add index
@@ -35,7 +35,7 @@ loopm1: din
         st count
         ldc 0
         st index
-loopm2: din
+loopm2: din             ;start inputing numbers into matrixB
         push
         ldc matrixB
         add index
