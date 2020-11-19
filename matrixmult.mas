@@ -1,3 +1,4 @@
+!o        
         ldc msg1
         sout
         ldc '\n'
@@ -5,8 +6,7 @@
         din
         st n
         push
-        call mult
-        pop
+        mult
         st msize
         ldc msg2
         sout
@@ -47,12 +47,99 @@ loopm2: din             ;start inputing numbers into matrixB
         sub one
         st count
         jnz loopm2
-        ja done
 
+loopi:  ld j
+        push
+        ld n
+        mult
+        add i
+        st Aoff
+
+
+        ld i
+        push
+        ld n
+        mult
+        add j
+        st Boff
+
+        ldc matrixA
+        add Aoff
+        ldi
+        push
+        ldc matrixB
+        add Boff
+        ldi
+        mult
+        add sum2
+        st sum2
+
+        ld i
+        add one
+        st i
+        sub n
+        jn loopi
+
+        ld sum2
+        push
+        ldc matrixC
+        add Cindex
+        sti
+        ld Cindex
+        add one
+        st Cindex
+
+        ldc 0
+        st i
+        ld j
+        add one
+        st j
+        sub n
+        jn loopi
+        ldc '\n'
+        aout
+
+        ldc matrixC
+        ldi
+        dout
+        ldc '\n'
+        aout
+        ldc matrixC
+        add one
+        ldi
+        dout
+        ldc '\n'
+        aout
+        ldc matrixC
+        add one
+        add one
+        ldi
+        dout
+        ldc '\n'
+        aout
+        ldc matrixC
+        add one
+        add one
+        add one
+        ldi
+        dout
+        ldc '\n'
+        aout
+        ldc matrixC
+        add one
+        add one
+        add one
+        add one
+        ldi
+        dout
+        
+        ja done
 
 mult:   st op1
         ldr 1
         st op2
+        ldc msg4
+        sout
 loopm:  ld sum
         add op1
         st sum
@@ -65,19 +152,28 @@ loopm:  ld sum
         ret
 
 done:   halt
+Icount: dw 0
+Jcount: dw 0
+temp:   dw 0
+Cindex: dw 0
+Aoff:   dw 0
+Boff:   dw 0
+i:      dw 0
+j:      dw 0
 sum:    dw 0
+sum2:   dw 0
 one:    dw 1
 op1:    dw 0
 op2:    dw 0
 n:      dw 0
 msize:  dw 0
 index:  dw 0
-temp:   dw 0
 count:  dw 0
 msg0:   dw "Is there another problem?"
 msg1:   dw "please enter the value 'n' for the size of the matrices:"
 msg2:   dw "please enter the values for matrix A:"
 msg3:   dw "please enter the values for matrix B:"
+msg4:   dw "I did it I think"
 matrixA:dw 100 dup 0
 matrixB:dw 100 dup 0
 matrixC:dw 100 dup 0
