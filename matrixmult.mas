@@ -47,6 +47,10 @@ loopm2: din             ;start inputing numbers into matrixB
         sub one
         st count
         jnz loopm2
+        ldc '\n'
+        aout
+        ldc '\n'
+        aout
 
 loopi:  ld j
         push
@@ -54,6 +58,11 @@ loopi:  ld j
         mult
         add i
         st Aoff
+        dout
+        ldc '\n'
+        aout
+        ldc '\n'
+        aout
 
 
         ld i
@@ -62,6 +71,11 @@ loopi:  ld j
         mult
         add j
         st Boff
+        dout
+        ldc '\n'
+        aout
+        ldc '\n'
+        aout
 
         ldc matrixA
         add Aoff
@@ -91,6 +105,7 @@ loopi:  ld j
 
         ldc 0
         st i
+        st sum2
         ld j
         add one
         st j
@@ -118,15 +133,6 @@ loopi:  ld j
         ldc '\n'
         aout
         ldc matrixC
-        add one
-        add one
-        add one
-        ldi
-        dout
-        ldc '\n'
-        aout
-        ldc matrixC
-        add one
         add one
         add one
         add one

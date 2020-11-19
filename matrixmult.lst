@@ -1,359 +1,365 @@
-Machine-level Assembler Version 6.3    Wed Nov 18 23:05:44 2020
+Machine-level Assembler Version 6.3    Thu Nov 19 00:32:15 2020
 
   LOC    OBJ   SOURCE
 hex*dec
 
                !o        
-0  *0    80B8          ldc msg1
+0  *0    80BE          ldc msg1
 1  *1    FFF7          sout
 2  *2    800A          ldc '\n'
 3  *3    FFFB          aout
 4  *4    FFFC          din
-5  *5    109A          st n
+5  *5    10A0          st n
 6  *6    F300          push
 7  *7    FF40          mult
-8  *8    109B          st msize
-9  *9    80F1          ldc msg2
+8  *8    10A1          st msize
+9  *9    80F7          ldc msg2
 A  *10   FFF7          sout
 B  *11   800A          ldc '\n'
 C  *12   FFFB          aout
-D  *13   009B          ld msize
-E  *14   109D          st count
+D  *13   00A1          ld msize
+E  *14   10A3          st count
 F  *15   FFFC  loopm1: din             ;start inputing numbers into matrixA
 10 *16   F300          push
-11 *17   814E          ldc matrixA
-12 *18   209C          add index
+11 *17   8154          ldc matrixA
+12 *18   20A2          add index
 13 *19   F200          sti
-14 *20   009C          ld index
-15 *21   2097          add one
-16 *22   109C          st index
-17 *23   009D          ld count
-18 *24   3097          sub one
-19 *25   109D          st count
+14 *20   00A2          ld index
+15 *21   209D          add one
+16 *22   10A2          st index
+17 *23   00A3          ld count
+18 *24   309D          sub one
+19 *25   10A3          st count
 1A *26   D00F          jnz loopm1
                
-1B *27   8117          ldc msg3
+1B *27   811D          ldc msg3
 1C *28   FFF7          sout
 1D *29   800A          ldc '\n'
 1E *30   FFFB          aout
-1F *31   009B          ld msize
-20 *32   109D          st count
+1F *31   00A1          ld msize
+20 *32   10A3          st count
 21 *33   8000          ldc 0
-22 *34   109C          st index
+22 *34   10A2          st index
 23 *35   FFFC  loopm2: din             ;start inputing numbers into matrixB
 24 *36   F300          push
-25 *37   81B2          ldc matrixB
-26 *38   209C          add index
+25 *37   81B8          ldc matrixB
+26 *38   20A2          add index
 27 *39   F200          sti
-28 *40   009C          ld index
-29 *41   2097          add one
-2A *42   109C          st index
-2B *43   009D          ld count
-2C *44   3097          sub one
-2D *45   109D          st count
+28 *40   00A2          ld index
+29 *41   209D          add one
+2A *42   10A2          st index
+2B *43   00A3          ld count
+2C *44   309D          sub one
+2D *45   10A3          st count
 2E *46   D023          jnz loopm2
+2F *47   800A          ldc '\n'
+30 *48   FFFB          aout
+31 *49   800A          ldc '\n'
+32 *50   FFFB          aout
                
-2F *47   0094  loopi:  ld j
-30 *48   F300          push
-31 *49   009A          ld n
-32 *50   FF40          mult
-33 *51   2093          add i
-34 *52   1091          st Aoff
+33 *51   009A  loopi:  ld j
+34 *52   F300          push
+35 *53   00A0          ld n
+36 *54   FF40          mult
+37 *55   2099          add i
+38 *56   1097          st Aoff
+39 *57   FFFD          dout
+3A *58   800A          ldc '\n'
+3B *59   FFFB          aout
+3C *60   800A          ldc '\n'
+3D *61   FFFB          aout
                
                
-35 *53   0093          ld i
-36 *54   F300          push
-37 *55   009A          ld n
-38 *56   FF40          mult
-39 *57   2094          add j
-3A *58   1092          st Boff
+3E *62   0099          ld i
+3F *63   F300          push
+40 *64   00A0          ld n
+41 *65   FF40          mult
+42 *66   209A          add j
+43 *67   1098          st Boff
+44 *68   FFFD          dout
+45 *69   800A          ldc '\n'
+46 *70   FFFB          aout
+47 *71   800A          ldc '\n'
+48 *72   FFFB          aout
                
-3B *59   814E          ldc matrixA
-3C *60   2091          add Aoff
-3D *61   F100          ldi
-3E *62   F300          push
-3F *63   81B2          ldc matrixB
-40 *64   2092          add Boff
-41 *65   F100          ldi
-42 *66   FF40          mult
-43 *67   2096          add sum2
-44 *68   1096          st sum2
+49 *73   8154          ldc matrixA
+4A *74   2097          add Aoff
+4B *75   F100          ldi
+4C *76   F300          push
+4D *77   81B8          ldc matrixB
+4E *78   2098          add Boff
+4F *79   F100          ldi
+50 *80   FF40          mult
+51 *81   209C          add sum2
+52 *82   109C          st sum2
                
-45 *69   0093          ld i
-46 *70   2097          add one
-47 *71   1093          st i
-48 *72   309A          sub n
-49 *73   B02F          jn loopi
+53 *83   0099          ld i
+54 *84   209D          add one
+55 *85   1099          st i
+56 *86   30A0          sub n
+57 *87   B033          jn loopi
                
-4A *74   0096          ld sum2
-4B *75   F300          push
-4C *76   8216          ldc matrixC
-4D *77   2090          add Cindex
-4E *78   F200          sti
-4F *79   0090          ld Cindex
-50 *80   2097          add one
-51 *81   1090          st Cindex
+58 *88   009C          ld sum2
+59 *89   F300          push
+5A *90   821C          ldc matrixC
+5B *91   2096          add Cindex
+5C *92   F200          sti
+5D *93   0096          ld Cindex
+5E *94   209D          add one
+5F *95   1096          st Cindex
                
-52 *82   8000          ldc 0
-53 *83   1093          st i
-54 *84   0094          ld j
-55 *85   2097          add one
-56 *86   1094          st j
-57 *87   309A          sub n
-58 *88   B02F          jn loopi
-59 *89   800A          ldc '\n'
-5A *90   FFFB          aout
+60 *96   8000          ldc 0
+61 *97   1099          st i
+62 *98   109C          st sum2
+63 *99   009A          ld j
+64 *100  209D          add one
+65 *101  109A          st j
+66 *102  30A0          sub n
+67 *103  B033          jn loopi
+68 *104  800A          ldc '\n'
+69 *105  FFFB          aout
                
-5B *91   8216          ldc matrixC
-5C *92   F100          ldi
-5D *93   FFFD          dout
-5E *94   800A          ldc '\n'
-5F *95   FFFB          aout
-60 *96   8216          ldc matrixC
-61 *97   2097          add one
-62 *98   F100          ldi
-63 *99   FFFD          dout
-64 *100  800A          ldc '\n'
-65 *101  FFFB          aout
-66 *102  8216          ldc matrixC
-67 *103  2097          add one
-68 *104  2097          add one
-69 *105  F100          ldi
-6A *106  FFFD          dout
-6B *107  800A          ldc '\n'
-6C *108  FFFB          aout
-6D *109  8216          ldc matrixC
-6E *110  2097          add one
-6F *111  2097          add one
-70 *112  2097          add one
+6A *106  821C          ldc matrixC
+6B *107  F100          ldi
+6C *108  FFFD          dout
+6D *109  800A          ldc '\n'
+6E *110  FFFB          aout
+6F *111  821C          ldc matrixC
+70 *112  209D          add one
 71 *113  F100          ldi
 72 *114  FFFD          dout
 73 *115  800A          ldc '\n'
 74 *116  FFFB          aout
-75 *117  8216          ldc matrixC
-76 *118  2097          add one
-77 *119  2097          add one
-78 *120  2097          add one
-79 *121  2097          add one
-7A *122  F100          ldi
-7B *123  FFFD          dout
+75 *117  821C          ldc matrixC
+76 *118  209D          add one
+77 *119  209D          add one
+78 *120  F100          ldi
+79 *121  FFFD          dout
+7A *122  800A          ldc '\n'
+7B *123  FFFB          aout
+7C *124  821C          ldc matrixC
+7D *125  209D          add one
+7E *126  209D          add one
+7F *127  209D          add one
+80 *128  F100          ldi
+81 *129  FFFD          dout
                        
-7C *124  908C          ja done
+82 *130  9092          ja done
                
-7D *125  1098  mult:   st op1
-7E *126  4001          ldr 1
-7F *127  1099          st op2
-80 *128  813D          ldc msg4
-81 *129  FFF7          sout
-82 *130  0095  loopm:  ld sum
-83 *131  2098          add op1
-84 *132  1095          st sum
-85 *133  0099          ld op2
-86 *134  3097          sub one
-87 *135  1099          st op2
-88 *136  D082          jnz loopm
-89 *137  0095          ld sum
-8A *138  5001          str 1
-8B *139  F000          ret
+83 *131  109E  mult:   st op1
+84 *132  4001          ldr 1
+85 *133  109F          st op2
+86 *134  8143          ldc msg4
+87 *135  FFF7          sout
+88 *136  009B  loopm:  ld sum
+89 *137  209E          add op1
+8A *138  109B          st sum
+8B *139  009F          ld op2
+8C *140  309D          sub one
+8D *141  109F          st op2
+8E *142  D088          jnz loopm
+8F *143  009B          ld sum
+90 *144  5001          str 1
+91 *145  F000          ret
                
-8C *140  FFFF  done:   halt
-8D *141  0000  Icount: dw 0
-8E *142  0000  Jcount: dw 0
-8F *143  0000  temp:   dw 0
-90 *144  0000  Cindex: dw 0
-91 *145  0000  Aoff:   dw 0
-92 *146  0000  Boff:   dw 0
-93 *147  0000  i:      dw 0
-94 *148  0000  j:      dw 0
-95 *149  0000  sum:    dw 0
-96 *150  0000  sum2:   dw 0
-97 *151  0001  one:    dw 1
-98 *152  0000  op1:    dw 0
-99 *153  0000  op2:    dw 0
-9A *154  0000  n:      dw 0
-9B *155  0000  msize:  dw 0
-9C *156  0000  index:  dw 0
-9D *157  0000  count:  dw 0
-9E *158  0049  msg0:   dw "Is there another problem?"
-9F *159  0073
-A0 *160  0020
-A1 *161  0074
-A2 *162  0068
-A3 *163  0065
-A4 *164  0072
-A5 *165  0065
+92 *146  FFFF  done:   halt
+93 *147  0000  Icount: dw 0
+94 *148  0000  Jcount: dw 0
+95 *149  0000  temp:   dw 0
+96 *150  0000  Cindex: dw 0
+97 *151  0000  Aoff:   dw 0
+98 *152  0000  Boff:   dw 0
+99 *153  0000  i:      dw 0
+9A *154  0000  j:      dw 0
+9B *155  0000  sum:    dw 0
+9C *156  0000  sum2:   dw 0
+9D *157  0001  one:    dw 1
+9E *158  0000  op1:    dw 0
+9F *159  0000  op2:    dw 0
+A0 *160  0000  n:      dw 0
+A1 *161  0000  msize:  dw 0
+A2 *162  0000  index:  dw 0
+A3 *163  0000  count:  dw 0
+A4 *164  0049  msg0:   dw "Is there another problem?"
+A5 *165  0073
 A6 *166  0020
-A7 *167  0061
-A8 *168  006E
-A9 *169  006F
-AA *170  0074
-AB *171  0068
-AC *172  0065
-AD *173  0072
-AE *174  0020
-AF *175  0070
-B0 *176  0072
-B1 *177  006F
-B2 *178  0062
-B3 *179  006C
-B4 *180  0065
-B5 *181  006D
-B6 *182  003F
-B7 *183  0000
-B8 *184  0070  msg1:   dw "please enter the value 'n' for the size of the matri
+A7 *167  0074
+A8 *168  0068
+A9 *169  0065
+AA *170  0072
+AB *171  0065
+AC *172  0020
+AD *173  0061
+AE *174  006E
+AF *175  006F
+B0 *176  0074
+B1 *177  0068
+B2 *178  0065
+B3 *179  0072
+B4 *180  0020
+B5 *181  0070
+B6 *182  0072
+B7 *183  006F
+B8 *184  0062
 B9 *185  006C
 BA *186  0065
-BB *187  0061
-BC *188  0073
-BD *189  0065
-BE *190  0020
-BF *191  0065
-C0 *192  006E
-C1 *193  0074
-C2 *194  0065
-C3 *195  0072
+BB *187  006D
+BC *188  003F
+BD *189  0000
+BE *190  0070  msg1:   dw "please enter the value 'n' for the size of the matri
+BF *191  006C
+C0 *192  0065
+C1 *193  0061
+C2 *194  0073
+C3 *195  0065
 C4 *196  0020
-C5 *197  0074
-C6 *198  0068
-C7 *199  0065
-C8 *200  0020
-C9 *201  0076
-CA *202  0061
-CB *203  006C
-CC *204  0075
+C5 *197  0065
+C6 *198  006E
+C7 *199  0074
+C8 *200  0065
+C9 *201  0072
+CA *202  0020
+CB *203  0074
+CC *204  0068
 CD *205  0065
 CE *206  0020
-CF *207  0027
-D0 *208  006E
-D1 *209  0027
-D2 *210  0020
-D3 *211  0066
-D4 *212  006F
-D5 *213  0072
-D6 *214  0020
-D7 *215  0074
-D8 *216  0068
-D9 *217  0065
-DA *218  0020
-DB *219  0073
-DC *220  0069
-DD *221  007A
-DE *222  0065
-DF *223  0020
-E0 *224  006F
-E1 *225  0066
-E2 *226  0020
-E3 *227  0074
-E4 *228  0068
-E5 *229  0065
-E6 *230  0020
-E7 *231  006D
-E8 *232  0061
+CF *207  0076
+D0 *208  0061
+D1 *209  006C
+D2 *210  0075
+D3 *211  0065
+D4 *212  0020
+D5 *213  0027
+D6 *214  006E
+D7 *215  0027
+D8 *216  0020
+D9 *217  0066
+DA *218  006F
+DB *219  0072
+DC *220  0020
+DD *221  0074
+DE *222  0068
+DF *223  0065
+E0 *224  0020
+E1 *225  0073
+E2 *226  0069
+E3 *227  007A
+E4 *228  0065
+E5 *229  0020
+E6 *230  006F
+E7 *231  0066
+E8 *232  0020
 E9 *233  0074
-EA *234  0072
-EB *235  0069
-EC *236  0063
-ED *237  0065
-EE *238  0073
-EF *239  003A
-F0 *240  0000
-F1 *241  0070  msg2:   dw "please enter the values for matrix A:"
-F2 *242  006C
+EA *234  0068
+EB *235  0065
+EC *236  0020
+ED *237  006D
+EE *238  0061
+EF *239  0074
+F0 *240  0072
+F1 *241  0069
+F2 *242  0063
 F3 *243  0065
-F4 *244  0061
-F5 *245  0073
-F6 *246  0065
-F7 *247  0020
-F8 *248  0065
-F9 *249  006E
-FA *250  0074
-FB *251  0065
-FC *252  0072
+F4 *244  0073
+F5 *245  003A
+F6 *246  0000
+F7 *247  0070  msg2:   dw "please enter the values for matrix A:"
+F8 *248  006C
+F9 *249  0065
+FA *250  0061
+FB *251  0073
+FC *252  0065
 FD *253  0020
-FE *254  0074
-FF *255  0068
-100*256  0065
-101*257  0020
-102*258  0076
-103*259  0061
-104*260  006C
-105*261  0075
+FE *254  0065
+FF *255  006E
+100*256  0074
+101*257  0065
+102*258  0072
+103*259  0020
+104*260  0074
+105*261  0068
 106*262  0065
-107*263  0073
-108*264  0020
-109*265  0066
-10A*266  006F
-10B*267  0072
-10C*268  0020
-10D*269  006D
-10E*270  0061
-10F*271  0074
-110*272  0072
-111*273  0069
-112*274  0078
-113*275  0020
-114*276  0041
-115*277  003A
-116*278  0000
-117*279  0070  msg3:   dw "please enter the values for matrix B:"
-118*280  006C
-119*281  0065
-11A*282  0061
-11B*283  0073
-11C*284  0065
-11D*285  0020
-11E*286  0065
-11F*287  006E
-120*288  0074
-121*289  0065
-122*290  0072
+107*263  0020
+108*264  0076
+109*265  0061
+10A*266  006C
+10B*267  0075
+10C*268  0065
+10D*269  0073
+10E*270  0020
+10F*271  0066
+110*272  006F
+111*273  0072
+112*274  0020
+113*275  006D
+114*276  0061
+115*277  0074
+116*278  0072
+117*279  0069
+118*280  0078
+119*281  0020
+11A*282  0041
+11B*283  003A
+11C*284  0000
+11D*285  0070  msg3:   dw "please enter the values for matrix B:"
+11E*286  006C
+11F*287  0065
+120*288  0061
+121*289  0073
+122*290  0065
 123*291  0020
-124*292  0074
-125*293  0068
-126*294  0065
-127*295  0020
-128*296  0076
-129*297  0061
-12A*298  006C
-12B*299  0075
+124*292  0065
+125*293  006E
+126*294  0074
+127*295  0065
+128*296  0072
+129*297  0020
+12A*298  0074
+12B*299  0068
 12C*300  0065
-12D*301  0073
-12E*302  0020
-12F*303  0066
-130*304  006F
-131*305  0072
-132*306  0020
-133*307  006D
-134*308  0061
-135*309  0074
-136*310  0072
-137*311  0069
-138*312  0078
-139*313  0020
-13A*314  0042
-13B*315  003A
-13C*316  0000
-13D*317  0049  msg4:   dw "I did it I think"
-13E*318  0020
-13F*319  0064
-140*320  0069
-141*321  0064
-142*322  0020
-143*323  0069
-144*324  0074
-145*325  0020
-146*326  0049
-147*327  0020
-148*328  0074
-149*329  0068
-14A*330  0069
-14B*331  006E
-14C*332  006B
-14D*333  0000
-14E*334  0000  matrixA:dw 100 dup 0
-1B2*434  0000  matrixB:dw 100 dup 0
-216*534  0000  matrixC:dw 100 dup 0
-27A*634  ========= end of matrixmult.mas =========================
+12D*301  0020
+12E*302  0076
+12F*303  0061
+130*304  006C
+131*305  0075
+132*306  0065
+133*307  0073
+134*308  0020
+135*309  0066
+136*310  006F
+137*311  0072
+138*312  0020
+139*313  006D
+13A*314  0061
+13B*315  0074
+13C*316  0072
+13D*317  0069
+13E*318  0078
+13F*319  0020
+140*320  0042
+141*321  003A
+142*322  0000
+143*323  0049  msg4:   dw "I did it I think"
+144*324  0020
+145*325  0064
+146*326  0069
+147*327  0064
+148*328  0020
+149*329  0069
+14A*330  0074
+14B*331  0020
+14C*332  0049
+14D*333  0020
+14E*334  0074
+14F*335  0068
+150*336  0069
+151*337  006E
+152*338  006B
+153*339  0000
+154*340  0000  matrixA:dw 100 dup 0
+1B8*440  0000  matrixB:dw 100 dup 0
+21C*540  0000  matrixC:dw 100 dup 0
+280*640  ========= end of matrixmult.mas =========================
 
 
          Symbol/Cross-Reference Table
@@ -363,41 +369,39 @@ Symbol                   Address     References
 
  loopm1                    F           1A 
  loopm2                    23          2E 
- loopi                     2F          49  58 
- mult                      7D         
- loopm                     82          88 
- done                      8C          7C 
- Icount                    8D         
- Jcount                    8E         
- temp                      8F         
- Cindex                    90          4D  4F  51 
- Aoff                      91          34  3C 
- Boff                      92          3A  40 
- i                         93          33  35  45  47  53 
- j                         94          2F  39  54  56 
- sum                       95          82  84  89 
- sum2                      96          43  44  4A 
- one                       97          15  18  29  2C  46 
-                                       50  55  61  67  68 
-                                       6E  6F  70  76  77 
-                                       78  79  86 
- op1                       98          7D  83 
- op2                       99          7F  85  87 
- n                         9A          5   31  37  48  57 
- msize                     9B          8   D   1F 
- index                     9C          12  14  16  22  26 
+ loopi                     33          57  67 
+ mult                      83         
+ loopm                     88          8E 
+ done                      92          82 
+ Icount                    93         
+ Jcount                    94         
+ temp                      95         
+ Cindex                    96          5B  5D  5F 
+ Aoff                      97          38  4A 
+ Boff                      98          43  4E 
+ i                         99          37  3E  53  55  61 
+ j                         9A          33  42  63  65 
+ sum                       9B          88  8A  8F 
+ sum2                      9C          51  52  58  62 
+ one                       9D          15  18  29  2C  54 
+                                       5E  64  70  76  77 
+                                       7D  7E  7F  8C 
+ op1                       9E          83  89 
+ op2                       9F          85  8B  8D 
+ n                         A0          5   35  40  56  66 
+ msize                     A1          8   D   1F 
+ index                     A2          12  14  16  22  26 
                                        28  2A 
- count                     9D          E   17  19  20  2B 
+ count                     A3          E   17  19  20  2B 
                                        2D 
- msg0                      9E         
- msg1                      B8          0  
- msg2                      F1          9  
- msg3                      117         1B 
- msg4                      13D         80 
- matrixA                   14E         11  3B 
- matrixB                   1B2         25  3F 
- matrixC                   216         4C  5B  60  66  6D 
-                                       75 
+ msg0                      A4         
+ msg1                      BE          0  
+ msg2                      F7          9  
+ msg3                      11D         1B 
+ msg4                      143         86 
+ matrixA                   154         11  49 
+ matrixB                   1B8         25  4D 
+ matrixC                   21C         5A  6A  6F  75  7C 
 
 Input file   = matrixmult.mas
 Output file  = matrixmult.mac
