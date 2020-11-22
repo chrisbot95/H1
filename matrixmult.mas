@@ -1,5 +1,15 @@
 !o        
-        ldc msg1
+loopq:  ldc msg0
+        sout
+        ldc '\n'
+        aout
+        ain
+        sub no
+        jz done
+        sub yes
+        jz start
+        ja loopq
+start:  ldc msg1
         sout
         ldc '\n'
         aout
@@ -17,15 +27,13 @@
 loopm1: din             ;start inputing numbers into matrixA
         push
         ldc matrixA
-        add index
+        add i
         sti
-        ld index
+        ld i
         add one
-        st index
-        ld count
-        sub one
-        st count
-        jnz loopm1
+        st i
+        sub msize
+        jn loopm1
 
         ldc msg3
         sout
@@ -34,23 +42,21 @@ loopm1: din             ;start inputing numbers into matrixA
         ld msize
         st count
         ldc 0
-        st index
+        st i
 loopm2: din             ;start inputing numbers into matrixB
         push
         ldc matrixB
-        add index
+        add i
         sti
-        ld index
+        ld i
         add one
-        st index
-        ld count
-        sub one
-        st count
-        jnz loopm2
+        st i
+        sub msize
+        jn loopm2
         ldc '\n'
         aout
-        ldc '\n'
-        aout
+        ldc 0
+        st i
 
 loopi:  ld j
         push
@@ -58,24 +64,13 @@ loopi:  ld j
         mult
         add i
         st Aoff
-        dout
-        ldc '\n'
-        aout
-        ldc '\n'
-        aout
-
 
         ld i
         push
         ld n
         mult
-        add j
+        add k
         st Boff
-        dout
-        ldc '\n'
-        aout
-        ldc '\n'
-        aout
 
         ldc matrixA
         add Aoff
@@ -85,8 +80,8 @@ loopi:  ld j
         add Boff
         ldi
         mult
-        add sum2
-        st sum2
+        add sum
+        st sum
 
         ld i
         add one
@@ -94,7 +89,7 @@ loopi:  ld j
         sub n
         jn loopi
 
-        ld sum2
+        ld sum
         push
         ldc matrixC
         add Cindex
@@ -105,81 +100,66 @@ loopi:  ld j
 
         ldc 0
         st i
-        st sum2
+        st sum
+        ld k
+        add one
+        st k
+        sub n
+        jn loopi
+
+        ldc 0
+        st i
+        st sum
+        st k
         ld j
         add one
         st j
         sub n
         jn loopi
-        ldc '\n'
-        aout
 
-        ldc matrixC
+        ldc 0
+        st i
+        st j
+loopd:  ldc matrixC
+        add i
         ldi
         dout
-        ldc '\n'
+        ldc ' '
         aout
-        ldc matrixC
+        ld i
         add one
-        ldi
-        dout
-        ldc '\n'
+        st i
+        sub msize
+        jzop done
+        ld j
+        add one
+        st j
+        sub n
+        jzop skip
+        ja loopd
+skip:   ldc '\n'
         aout
-        ldc matrixC
-        add one
-        add one
-        ldi
-        dout
-        ldc '\n'
-        aout
-        ldc matrixC
-        add one
-        add one
-        add one
-        ldi
-        dout
-        
-        ja done
-
-mult:   st op1
-        ldr 1
-        st op2
-        ldc msg4
-        sout
-loopm:  ld sum
-        add op1
-        st sum
-        ld op2
-        sub one
-        st op2
-        jnz loopm
-        ld sum
-        str 1
-        ret
+        ldc 0
+        st j
+        ja loopd
 
 done:   halt
-Icount: dw 0
-Jcount: dw 0
-temp:   dw 0
+no:     dw 110
+yes:    dw 11
 Cindex: dw 0
 Aoff:   dw 0
 Boff:   dw 0
 i:      dw 0
 j:      dw 0
+k:      dw 0
 sum:    dw 0
-sum2:   dw 0
 one:    dw 1
-op1:    dw 0
-op2:    dw 0
 n:      dw 0
 msize:  dw 0
-index:  dw 0
-count:  dw 0
-msg0:   dw "Is there another problem?"
+msg0:   dw "Is there another problem? (y/n)"
 msg1:   dw "please enter the value 'n' for the size of the matrices:"
 msg2:   dw "please enter the values for matrix A:"
 msg3:   dw "please enter the values for matrix B:"
-msg4:   dw "I did it I think"
 matrixA:dw 100 dup 0
 matrixB:dw 100 dup 0
 matrixC:dw 100 dup 0

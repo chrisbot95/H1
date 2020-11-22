@@ -1,0 +1,26 @@
+Machine-level Assembler Version 6.3    Fri Nov 20 20:01:33 2020
+
+  LOC    OBJ   SOURCE
+hex*dec
+
+               !s
+0  *0    4003  bits x
+1  *1    FFFD  dout
+2  *2    FFFF  halt
+3  *3    FFF1  x: dw FFF1h
+4  *4    ========= end of testmyshit2.mas ========================
+
+
+         Symbol/Cross-Reference Table
+
+Symbol                   Address     References
+                          (hex)       (hex)
+
+ x                         3           0  
+
+Input file   = testmyshit2.mas
+Output file  = testmyshit2.mac
+List file    = testmyshit2.lst 
+Config file  = s.cfg 
+Number base  = decimal
+Label status = case sensitive

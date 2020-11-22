@@ -113,15 +113,30 @@ L2:         /------------------------- ADD ----------------------
             mar = ir;
             rd; 
             ac = ac + mdr; goto fetch;
-L3:         /------------------------- SUB ----------------------
+L3:         /------------------------- EVEN ---------------------
             mar = ir;
-            rd; 
-            ac = ac - mdr; goto fetch
-L4:         /------------------------- LDR ----------------------
-            f = ir + sp;
-            mar = f; 
-            rd; 
-            ac = mdr; goto fetch;
+            rd;
+            ac = mdr & 1; goto fetch;
+L4:         /------------------------- BITS ----------------------
+            d = 0;
+            e = 1;
+            e = e + e;
+            e = e * e;
+            e = e * e;
+            e = e - 1;
+            mar = ir;
+            rd;
+            ac = mdr; if (s) goto count;
+            e = e - 1; if (s) goto done;
+    begin:  ac = left(ac); if (s) goto count;
+            e = e - 1; if (s) goto done;
+            goto begin;
+    count:  d = d + 1; 
+            e = e - 1; if (s) goto done;
+            goto begin;
+    done:   ac = d; goto fetch; 
+
+            
 L5:         /------------------------- STR ----------------------
             f = ir + sp;
             mar = f; mdr = ac; 
