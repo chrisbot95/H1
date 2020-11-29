@@ -22,8 +22,6 @@ start:  ldc msg1
         sout
         ldc '\n'
         aout
-        ld msize
-        st count
 loopm1: din             ;start inputing numbers into matrixA
         push
         ldc matrixA
@@ -39,8 +37,6 @@ loopm1: din             ;start inputing numbers into matrixA
         sout
         ldc '\n'
         aout
-        ld msize
-        st count
         ldc 0
         st i
 loopm2: din             ;start inputing numbers into matrixB
@@ -130,7 +126,7 @@ loopd:  ldc matrixC
         add one
         st i
         sub msize
-        jzop done
+        jzop nextp
         ld j
         add one
         st j
@@ -142,6 +138,10 @@ skip:   ldc '\n'
         ldc 0
         st j
         ja loopd
+nextp:  ldc '\n'
+        aout
+        aout
+        ja loopq
 
 done:   halt
 no:     dw 110
