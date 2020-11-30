@@ -1,70 +1,14 @@
-Machine-level Assembler Version 6.3    Fri Nov 20 18:23:55 2020
+Machine-level Assembler Version 6.3    Sat Nov 28 22:19:05 2020
 
   LOC    OBJ   SOURCE
 hex*dec
 
-0  *0    FFFC  din
-1  *1    101D  st n
-2  *2    F300  push
-3  *3    E00A  call mult
-4  *4    FFFD  dout
-5  *5    F400  pop
-6  *6    FFFD  dout
-7  *7    801E  ldc msg1
-8  *8    FFF7  sout 
-9  *9    9018  ja done
-               
-A  *10   101B  mult: st op1
-B  *11   FFFD  dout
-C  *12   4001  ldr 1
-D  *13   FFFD  dout
-E  *14   101C  st op2
-F  *15   0019  loopm: ld sum
-10 *16   201B  add op1
-11 *17   1019  st sum
-12 *18   001C  ld op2
-13 *19   301A  sub one
-14 *20   101C  st op2
-15 *21   D00F  jnz loopm
-16 *22   0019  ld sum
-17 *23   F000  ret
-               
-18 *24   FFFF  done: halt
-19 *25   0000  sum: dw 0
-1A *26   0001  one: dw 1
-1B *27   0000  op1: dw 0
-1C *28   0000  op2: dw 0
-1D *29   0000  n: dw 0
-1E *30   0066  msg1: dw "finished this goddamned shit"
-1F *31   0069
-20 *32   006E
-21 *33   0069
-22 *34   0073
-23 *35   0068
-24 *36   0065
-25 *37   0064
-26 *38   0020
-27 *39   0074
-28 *40   0068
-29 *41   0069
-2A *42   0073
-2B *43   0020
-2C *44   0067
-2D *45   006F
-2E *46   0064
-2F *47   0064
-30 *48   0061
-31 *49   006D
-32 *50   006E
-33 *51   0065
-34 *52   0064
-35 *53   0020
-36 *54   0073
-37 *55   0068
-38 *56   0069
-39 *57   0074
-3A *58   0000
-3B *59   ========= end of testmyshit.mas =========================
+               !s1
+0  *0    3003          sd x
+1  *1    FFFD          dout
+2  *2    FFFF          halt
+3  *3    000A  x:      dw 10
+4  *4    ========= end of testmyshit.mas =========================
 
 
          Symbol/Cross-Reference Table
@@ -72,18 +16,11 @@ F  *15   0019  loopm: ld sum
 Symbol                   Address     References
                           (hex)       (hex)
 
- mult                      A           3  
- loopm                     F           15 
- done                      18          9  
- sum                       19          F   11  16 
- one                       1A          13 
- op1                       1B          A   10 
- op2                       1C          E   12  14 
- n                         1D          1  
- msg1                      1E          7  
+ x                         3           0  
 
 Input file   = testmyshit.mas
 Output file  = testmyshit.mac
 List file    = testmyshit.lst 
+Config file  = s1.cfg 
 Number base  = decimal
 Label status = case sensitive

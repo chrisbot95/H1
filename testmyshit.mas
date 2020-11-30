@@ -1,33 +1,5 @@
-din
-st n
-push
-call mult
-dout
-pop
-dout
-ldc msg1
-sout 
-ja done
-
-mult: st op1
-dout
-ldr 1
-dout
-st op2
-loopm: ld sum
-add op1
-st sum
-ld op2
-sub one
-st op2
-jnz loopm
-ld sum
-ret
-
-done: halt
-sum: dw 0
-one: dw 1
-op1: dw 0
-op2: dw 0
-n: dw 0
-msg1: dw "finished this goddamned shit"
+!s1
+        sd x
+        dout
+        halt
+x:      dw 10
