@@ -1,4 +1,4 @@
-Horizontal Microcode Assembler Version 6.3      Sat Nov 28 22:19:03 2020
+Horizontal Microcode Assembler Version 6.3      Mon Nov 30 22:30:42 2020
 
   LOC    OBJECT    SOURCE
 hex*dec
@@ -27,81 +27,81 @@ hex*dec
 7  *7    00000652              goto L0000;
 8  *8    5281820F  L1:         dc = left(dc); if (s) goto L11; 
 9  *9    52818216  L10:        dc = left(dc); if (s) goto L101; 
-A  *10   5281826F  L100:       dc = left(dc); if (s) goto L9; 
-B  *11   0000066E              goto L8;
+A  *10   52818272  L100:       dc = left(dc); if (s) goto L9; 
+B  *11   00000671              goto L8;
 C  *12   52818214  L01:        dc = left(dc); if (s) goto L011; 
-D  *13   52818263  L010:       dc = left(dc); if (s) goto L5; 
-E  *14   0000065F              goto L4;          
+D  *13   52818266  L010:       dc = left(dc); if (s) goto L5; 
+E  *14   00000662              goto L4;          
 F  *15   52818218  L11:        dc = left(dc); if (s) goto L111; 
-10 *16   52818278  L110:       dc = left(dc); if (s) goto LD; 
-11 *17   00000675              goto LC;
+10 *16   5281827B  L110:       dc = left(dc); if (s) goto LD; 
+11 *17   00000678              goto LC;
 12 *18   5281825A  L001:       dc = left(dc); if (s) goto L3; 
 13 *19   00000657              goto L2;
-14 *20   5281826A  L011:       dc = left(dc); if (s) goto L7; 
-15 *21   00000666              goto L6;
-16 *22   52818272  L101:       dc = left(dc); if (s) goto LB; 
-17 *23   00000670              goto LA;
+14 *20   5281826D  L011:       dc = left(dc); if (s) goto L7; 
+15 *21   00000669              goto L6;
+16 *22   52818275  L101:       dc = left(dc); if (s) goto LB; 
+17 *23   00000673              goto LA;
 18 *24   5281821A  L111:       dc = left(dc); if (s) goto LF; 
-19 *25   0000067A              goto LE;
+19 *25   0000067D              goto LE;
                    
 1A *26   5281821F  LF:         dc = left(dc); if (s) goto LF_1; 
 1B *27   52818223  LF_0:       dc = left(dc); if (s) goto LF_01; 
 1C *28   52818229  LF_00:      dc = left(dc); if (s) goto LF_001; 
-1D *29   52818280  LF_000:     dc = left(dc); if (s) goto LF_0001;
-1E *30   0000067D              goto LF_0000;
+1D *29   52818283  LF_000:     dc = left(dc); if (s) goto LF_0001;
+1E *30   00000680              goto LF_0000;
 1F *31   52818226  LF_1:       dc = left(dc); if (s) goto LF_11; 
 20 *32   5281822D  LF_10:      dc = left(dc); if (s) goto LF_101; 
-21 *33   52818294  LF_100:     dc = left(dc); if (s) goto LF_9;
-22 *34   00000694              goto LF_8;
+21 *33   52818297  LF_100:     dc = left(dc); if (s) goto LF_9;
+22 *34   00000697              goto LF_8;
 23 *35   5281822B  LF_01:      dc = left(dc); if (s) goto LF_011; 
-24 *36   5281828D  LF_010:     dc = left(dc); if (s) goto LF_5;
-25 *37   0000068A              goto LF_4;
+24 *36   52818290  LF_010:     dc = left(dc); if (s) goto LF_5;
+25 *37   0000068D              goto LF_4;
 26 *38   5281822F  LF_11:      dc = left(dc); if (s) goto LF_111; 
-27 *39   52818294  LF_110:     dc = left(dc); if (s) goto LF_D;
-28 *40   00000694              goto LF_C;
-29 *41   52818287  LF_001:     dc = left(dc); if (s) goto LF_3;
-2A *42   00000683              goto LF_2;
-2B *43   52818291  LF_011:     dc = left(dc); if (s) goto LF_7;
-2C *44   0000068F              goto LF_6;
-2D *45   52818294  LF_101:     dc = left(dc); if (s) goto LF_B;
-2E *46   00000694              goto LF_A;
+27 *39   52818297  LF_110:     dc = left(dc); if (s) goto LF_D;
+28 *40   00000697              goto LF_C;
+29 *41   5281828A  LF_001:     dc = left(dc); if (s) goto LF_3;
+2A *42   00000686              goto LF_2;
+2B *43   52818294  LF_011:     dc = left(dc); if (s) goto LF_7;
+2C *44   00000692              goto LF_6;
+2D *45   52818297  LF_101:     dc = left(dc); if (s) goto LF_B;
+2E *46   00000697              goto LF_A;
 2F *47   52818231  LF_111:     dc = left(dc); if (s) goto LF_F;
-30 *48   00000694              goto LF_E;
+30 *48   00000697              goto LF_E;
                    
 31 *49   52818236  LF_F:       dc = left(dc); if (s) goto LF_F_1;
 32 *50   5281823A  LF_F_0:     dc = left(dc); if (s) goto LF_F_01;
 33 *51   52818240  LF_F_00:    dc = left(dc); if (s) goto LF_F_001;
-34 *52   52818294  LF_F_000:   dc = left(dc); if (s) goto LF_F_0001;
-35 *53   00000694              goto LF_F_0000;
+34 *52   52818297  LF_F_000:   dc = left(dc); if (s) goto LF_F_0001;
+35 *53   00000697              goto LF_F_0000;
 36 *54   5281823D  LF_F_1:     dc = left(dc); if (s) goto LF_F_11
 37 *55   52818244  LF_F_10:    dc = left(dc); if (s) goto LF_F_101;
-38 *56   52818294  LF_F_100:   dc = left(dc); if (s) goto LF_F_9;
-39 *57   00000694              goto LF_F_8;
+38 *56   52818297  LF_F_100:   dc = left(dc); if (s) goto LF_F_9;
+39 *57   00000697              goto LF_F_8;
 3A *58   52818242  LF_F_01:    dc = left(dc); if (s) goto LF_F_011;
-3B *59   52818294  LF_F_010:   dc = left(dc); if (s) goto LF_F_5;
-3C *60   00000694              goto LF_F_4;
+3B *59   52818297  LF_F_010:   dc = left(dc); if (s) goto LF_F_5;
+3C *60   00000697              goto LF_F_4;
 3D *61   52818246  LF_F_11:    dc = left(dc); if (s) goto LF_F_111
-3E *62   52818294  LF_F_110:   dc = left(dc); if (s) goto LF_F_D;
-3F *63   00000694              goto LF_F_C;
-40 *64   52818294  LF_F_001:   dc = left(dc); if (s) goto LF_F_3;
-41 *65   00000694              goto LF_F_2;
-42 *66   52818294  LF_F_011:   dc = left(dc); if (s) goto LF_F_7;
-43 *67   00000694              goto LF_F_6;
-44 *68   52818294  LF_F_101:   dc = left(dc); if (s) goto LF_F_B;
-45 *69   00000694              goto LF_F_A;
+3E *62   52818297  LF_F_110:   dc = left(dc); if (s) goto LF_F_D;
+3F *63   00000697              goto LF_F_C;
+40 *64   52818297  LF_F_001:   dc = left(dc); if (s) goto LF_F_3;
+41 *65   00000697              goto LF_F_2;
+42 *66   52818297  LF_F_011:   dc = left(dc); if (s) goto LF_F_7;
+43 *67   00000697              goto LF_F_6;
+44 *68   52818297  LF_F_101:   dc = left(dc); if (s) goto LF_F_B;
+45 *69   00000697              goto LF_F_A;
 46 *70   52818248  LF_F_111:   dc = left(dc); if (s) goto LF_F_F;
-47 *71   00000694              goto LF_F_E;
+47 *71   00000697              goto LF_F_E;
                    
 48 *72   52818200  LF_F_F:     dc = left(dc); if (s) goto fetch
 49 *73   5281824F  LF_F_F_0:   dc = left(dc); if (s) goto LF_F_F_01
 4A *74   5281824D  LF_F_F_00:  dc = left(dc); if (s) goto LF_F_F_001
-4B *75   52818294  LF_F_F_000: dc = left(dc); if (s) goto LF_F_F_0001;
-4C *76   00000694              goto LF_F_F_0000;
-4D *77   52818294  LF_F_F_001: dc = left(dc); if (s) goto LF_F_F_3
-4E *78   00000694              goto LF_F_F_2; 
+4B *75   52818297  LF_F_F_000: dc = left(dc); if (s) goto LF_F_F_0001;
+4C *76   00000697              goto LF_F_F_0000;
+4D *77   52818297  LF_F_F_001: dc = left(dc); if (s) goto LF_F_F_3
+4E *78   00000697              goto LF_F_F_2; 
 4F *79   52818200  LF_F_F_01:  dc = left(dc); if (s) goto fetch;
 50 *80   52818200  LF_F_F_010: dc = left(dc); if (s) goto fetch;
-51 *81   00000694              goto LF_F_F_4;
+51 *81   00000697              goto LF_F_F_4;
                    
                    /***********************************************************
                    /           Microcode for each instruction                  
@@ -119,83 +119,86 @@ F  *15   52818218  L11:        dc = left(dc); if (s) goto L111;
 58 *88   00001000              rd; 
 59 *89   420B0600              ac = ac + mdr; goto fetch;
                    L3:         /------------------------- SD ------------------
-5A *90   72448000              e = ir & xmask
-5B *91   00122000              mar = ir;
-5C *92   00001000              rd;
-5D *93   79400000              f = mdr;
-5E *94   439F4600              ac = e - f; goto fetch;
+5A *90   42114000              ac = ac - ac;
+5B *91   42030000              ac = ac + 1;
+5C *92   00122000              mar = ir;
+5D *93   00001000              rd;
+5E *94   01400000              0 = mdr;
+5F *95   00000200              if (s) goto fetch;
+60 *96   42114000              ac = ac - ac;
+61 *97   00000600              goto fetch;
                    L4:         /------------------------- LDR -----------------
-5F *95   7A4F0000              f = ir + sp;
-60 *96   001E2000              mar = f; 
-61 *97   00001000              rd; 
-62 *98   41400600              ac = mdr; goto fetch;
+62 *98   7A4F0000              f = ir + sp;
+63 *99   001E2000              mar = f; 
+64 *100  00001000              rd; 
+65 *101  41400600              ac = mdr; goto fetch;
                    L5:         /------------------------- STR -----------------
-63 *99   7A4F0000              f = ir + sp;
-64 *100  2A1E2000              mar = f; mdr = ac; 
-65 *101  00000E00              wr; goto fetch:
-                   L6:         /------------------------- ADDR ----------------
 66 *102  7A4F0000              f = ir + sp;
-67 *103  001E2000              mar = f; 
-68 *104  00001000              rd;
-69 *105  41510600              ac = mdr + ac; goto fetch;
+67 *103  2A1E2000              mar = f; mdr = ac; 
+68 *104  00000E00              wr; goto fetch:
+                   L6:         /------------------------- ADDR ----------------
+69 *105  7A4F0000              f = ir + sp;
+6A *106  001E2000              mar = f; 
+6B *107  00001000              rd;
+6C *108  41510600              ac = mdr + ac; goto fetch;
                    L7:         /------------------------- SUBR ----------------
-6A *106  7A4F0000              f = ir + sp;
-6B *107  001E2000              mar = f;
-6C *108  00001000              rd;
-6D *109  420B4600              ac = ac - mdr; goto fetch;
+6D *109  7A4F0000              f = ir + sp;
+6E *110  001E2000              mar = f;
+6F *111  00001000              rd;
+70 *112  420B4600              ac = ac - mdr; goto fetch;
                    L8:         /------------------------- LDC -----------------
-6E *110  42448600              ac = ir & xmask; goto fetch;
+71 *113  42448600              ac = ir & xmask; goto fetch;
                    L9:         /------------------------- JA ------------------
-6F *111  32448600              pc = ir & xmask; goto fetch;
+72 *114  32448600              pc = ir & xmask; goto fetch;
                    LA:         /------------------------- JZOP ----------------
-70 *112  02000200              0  = ac; if (s) goto fetch;
-71 *113  32448600              pc = ir & xmask; goto fetch; 
+73 *115  02000200              0  = ac; if (s) goto fetch;
+74 *116  32448600              pc = ir & xmask; goto fetch; 
                    LB:         /------------------------- JN ------------------
-72 *114  02000274              0  = ac; if (s) goto dojn;
-73 *115  00000600              goto fetch; 
-74 *116  32448600  dojn:       pc = ir & xmask; goto fetch; 
-                   LC:         /------------------------- JZ ------------------
-75 *117  02000477              0  = ac; if (z) goto dojz;
+75 *117  02000277              0  = ac; if (s) goto dojn;
 76 *118  00000600              goto fetch; 
-77 *119  32448600  dojz:       pc = ir & xmask; goto fetch; 
+77 *119  32448600  dojn:       pc = ir & xmask; goto fetch; 
+                   LC:         /------------------------- JZ ------------------
+78 *120  0200047A              0  = ac; if (z) goto dojz;
+79 *121  00000600              goto fetch; 
+7A *122  32448600  dojz:       pc = ir & xmask; goto fetch; 
                    LD:         /------------------------- JNZ -----------------
-78 *120  02000400              0  = ac; if (z) goto fetch;
-79 *121  32448600              pc = ir & xmask; goto fetch; 
+7B *123  02000400              0  = ac; if (z) goto fetch;
+7C *124  32448600              pc = ir & xmask; goto fetch; 
                    LE:         /------------------------- CALL ----------------
-7A *122  39C34000              sp = sp - 1;
-7B *123  298E2000              mar = sp; mdr = pc;  
-7C *124  32448E00              pc = ir & xmask; wr; goto fetch; 
+7D *125  39C34000              sp = sp - 1;
+7E *126  298E2000              mar = sp; mdr = pc;  
+7F *127  32448E00              pc = ir & xmask; wr; goto fetch; 
                    LF_0000:    /------------------------- RET -----------------
-7D *125  384F2000              mar = sp; sp = sp + 1;
-7E *126  00001000              rd;                                         
-7F *127  31400600              pc = mdr; goto fetch;                       
+80 *128  384F2000              mar = sp; sp = sp + 1;
+81 *129  00001000              rd;                                         
+82 *130  31400600              pc = mdr; goto fetch;                       
                    LF_0001:    /------------------------- LDI -----------------
-80 *128  00102000              mar = ac;
-81 *129  00001000              rd;
-82 *130  41400600              ac = mdr; goto fetch;
+83 *131  00102000              mar = ac;
+84 *132  00001000              rd;
+85 *133  41400600              ac = mdr; goto fetch;
                    LF_2:       /------------------------- STI -----------------
-83 *131  384F2000              mar = sp; sp = sp + 1;
-84 *132  00001000              rd;                                          
-85 *133  00102000              mar = ac;                                    
-86 *134  00000E00              wr; goto fetch;                              
+86 *134  384F2000              mar = sp; sp = sp + 1;
+87 *135  00001000              rd;                                          
+88 *136  00102000              mar = ac;                                    
+89 *137  00000E00              wr; goto fetch;                              
                    LF_3:       /------------------------- PUSH ----------------
-87 *135  39C34000              sp = sp - 1;
-88 *136  2A0E2000              mar = sp; mdr = ac;                         
-89 *137  00000E00              wr; goto fetch;                             
+8A *138  39C34000              sp = sp - 1;
+8B *139  2A0E2000              mar = sp; mdr = ac;                         
+8C *140  00000E00              wr; goto fetch;                             
                    LF_4:       /------------------------- POP -----------------
-8A *138  384F2000              mar = sp; sp = sp + 1;
-8B *139  00001000              rd;                                         
-8C *140  41400600              ac = mdr; goto fetch;                       
+8D *141  384F2000              mar = sp; sp = sp + 1;
+8E *142  00001000              rd;                                         
+8F *143  41400600              ac = mdr; goto fetch;                       
                    LF_5:       /------------------------- ALOC ----------------
-8D *141  7A468000              f = ir & ymask;
-8E *142  39DF4600              sp = sp - f; goto fetch;                    
+90 *144  7A468000              f = ir & ymask;
+91 *145  39DF4600              sp = sp - f; goto fetch;                    
                    LF_6:       /------------------------- DLOC ----------------
-8F *143  7A468000              f = ir & ymask;
-90 *144  39DF0600              sp = sp + f; goto fetch;                    
+92 *146  7A468000              f = ir & ymask;
+93 *147  39DF0600              sp = sp + f; goto fetch;                    
                    LF_7:       /------------------------- SWAP ----------------
-91 *145  7A000000              f = ac;
-92 *146  41C00000              ac = sp;                                    
-93 *147  3BC00600              sp = f; goto fetch;                         
+94 *148  7A000000              f = ac;
+95 *149  41C00000              ac = sp;                                    
+96 *150  3BC00600              sp = f; goto fetch;                         
                    /***********************************************************
                    /           Available Opcodes                               
                    /***********************************************************
@@ -226,8 +229,8 @@ F  *15   52818218  L11:        dc = left(dc); if (s) goto L111;
                    LF_F_F_2:   /-----------------------------------------------
                    LF_F_F_3:   /-----------------------------------------------
                    LF_F_F_4:   /-----------------------------------------------
-94 *148  00000600              goto fetch;
-95 *149  ============= end of s1.has =============================
+97 *151  00000600              goto fetch;
+98 *152  ============= end of s1.has =============================
 
 Input file   = s1.has
 Output file  = s1.hor

@@ -114,11 +114,14 @@ L2:         /------------------------- ADD ----------------------
             rd; 
             ac = ac + mdr; goto fetch;
 L3:         /------------------------- SD ----------------------
-            e = ir & xmask
+            ac = ac - ac;
+            ac = ac + 1;
             mar = ir;
             rd;
-            f = mdr;
-            ac = e - f; goto fetch;
+            0 = mdr;
+            if (s) goto fetch;
+            ac = ac - ac;
+            goto fetch;
 L4:         /------------------------- LDR ----------------------
             f = ir + sp;
             mar = f; 

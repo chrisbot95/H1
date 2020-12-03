@@ -1,5 +1,22 @@
-!s1
-        sd x
-        dout
-        halt
-x:      dw 10
+	ldc inmsg	;request input
+	sout
+	ldc inbuf	;get address of input buffer
+	sin
+loop: 	ldc inbuf
+	add length
+	ldi
+	jz done
+	ld length
+	add one
+	st length
+	ja loop
+done:	ldc outmsg
+        sout
+	ld length
+	dout
+	halt
+inmsg:	dw "Enter a string: "
+outmsg: dw "The length of the string is: "
+one: 	dw 1
+length:	dw 0 
+inbuf:	dw 81 dup 0
